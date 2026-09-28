@@ -70,13 +70,16 @@ Example of namespaces with prefixes.
 <earthdata
     xmlns:wtr="https://www.usgs.gov/water-science-school/science/how-much-water-there-earth"
     xmlns:wd="https://eu.usatoday.com/story/news/2015/09/02/earth-three-trillion-trees/71578324/">
+
+    <wtr:water>
+        <wtr:amount amount = "Liters"> 1,386 × 10²¹ </wtr:amount>
+    </wtr:water>
+
+    <wd:wood>
+        <wd:amount amount = "(European) Billions of kgs"> 1,386 × 10²¹ </wd:amount>
+    </wd:wood>
+
 </earthdata>
-
-<wtr:water>
-    <water:amount = "Liters"> 1,386 × 10²¹ </water:amount>
-</wtr:water>
-
-<wd:wood>
-    <wood:amount = "(European) Billions of kgs"> 1,386 × 10²¹ </wood:amount>
-</wd:wood>
 ```
+
+In this example, you can refer to two different things using "amount", because they come from different parents.
