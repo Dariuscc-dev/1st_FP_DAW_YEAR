@@ -55,3 +55,14 @@ And identifier has to be clear and significant, it can contain letters, numbers,
 Data types = Integers (int), characters (char), text (string), real number (double), and logic (boolean).
 
 ## Problem solving
+
+Quality of code depends on the quality of the analysis, we have to truly make an effort an digest the problem we have at hand precisely.
+
+We are trying to build a program, but that program revolves around building a solution that will hopefully solve a problem. 
+
+That solution is involved and influenced by analyzing the problem at hand correctly and creating a good algorythm for it.
+
+So the program revolver around = Problem, analysis, algorythm, preferably in cicles and not only once.
+
+Pólya method = Understand the problem, create a plan, execute the plan, revise the solution.
+And all of that, in cycles (iterating).
