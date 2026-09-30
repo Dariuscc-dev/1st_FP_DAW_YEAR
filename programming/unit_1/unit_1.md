@@ -66,3 +66,56 @@ So the program revolver around = Problem, analysis, algorythm, preferably in cic
 
 Pólya method = Understand the problem, create a plan, execute the plan, revise the solution.
 And all of that, in cycles (iterating).
+
+## Algorithm
+
+It describes, following logic, the operations necessary to transform data into an output result.
+
+So = Entry - Process - Output
+
+You can represent algorithms in = Flowchart, pseudocode.
+
+A Flowchart consists of = Terminal, entry/output, process, and the flow chart´s line.
+
+Pseudocode =
+Every instruction has to be in a single line.
+First instruction marks the start and the last one the end.
+Use simple words.
+Code has to be idented.
+It has to be clear, ordered and easy to transform into real code.
+
+The process of going from the problem to the program = Problem - Algorithm - Code (Java, for example) - Program (.java file).
+
+Program = Data types + Algorithms
+
+## First Program
+
+```java
+public class HelloFuture {
+    public static void main(String[]args){
+        System.out.println("Hello future Darius!");
+    }
+}
+```
+
+- We use public to indicate visibility.
+- We have to use class always in Java as it is a programming lenguage oriented to objectives.
+- HelloWorld is the identifier of the class.
+- "main" is the point where the execution starts.
+- "static" indicates that it is part of the parent class and it can be invoked without creating an object.
+- "void" indicates that it doesn´t output a value.
+- String[]args enables the console to receive arguments.
+- This {} delimits code blocs, classes and methods.
+- This () contains parammeters or arguments of a method.
+- This "" delimits strings
+- This ; finalizes an instruction.
+
+In Java, we can also differentiate between tokens, reserved words and identifiers.
+
+Code in java goes from = Source code (.java) to a compiler to bytecode to JVM.
+
+## Errors
+
+Two usual moments where failure happens while compiling or while executing.
+
+Compilation errors can be = Lexicographic, syntactic or semantic.
