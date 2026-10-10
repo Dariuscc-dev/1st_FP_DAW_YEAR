@@ -42,8 +42,66 @@ The closer you get to the CPU, the more expensive (bigger cost for bit) and fast
 
 We can also look at it like = Registers (general or specific purpose), caches (level 1, 2 or 3), primary memory (RAM), and Secondary Memory (e.g. SSD, HDD, Cloud...etc).
 
+Registers can be : CP, RI, AC, RT, RE, RM, and RD.
+
 The input/output unit realizes the necessary connections and adaptations of the CPU to input/output/mixed peripherals.
 
 Buses can be specifically assigned to certain tasks like = Entry, direction, or control.
 
-##
+The cycle of instructions goes like this :
+
+- First, the CPU (more precisely, the CU) looks for the instructions of the program (fetch) alongside with the CP, and then the instructions are retrieved from the RAM and brought to the CPU through buses, the instructions are saved in the RI.
+- The CU decodes the instructions.
+- After those first steps, the execution phase has started.
+- If operands are needed, the CU retrieves them from the RAM to load them into the registers of the ALU.
+- The CU signals the ALU to perform the isntructed operations and/or logic.
+- The results are then stored in registers such as the AC or written back into the primary memory.
+
+## Software
+
+Software can be differentiated in three levels :
+
+- Application level
+- Programming software level
+- Base software
+
+Software can also be :
+
+- Private software
+- Public software (respects all 4 freedom levels)
+
+Some suitable concepts according to our current context are : freeware, adware, sharewere, abandonware, copyleft, and public.
+
+Software can also be differentiated ny its license :
+
+- Open source
+- Freeware
+- Shareware
+- Public
+
+An organization that helps individuals manage license types is Creative Commons (CC)
+
+## Human factor
+
+Users can be :
+
+- Final users (the majority of users)
+
+OR Professional users, which can be specialized :
+
+- Maintenance technicians
+- Developers/Programmers
+- Network administrators
+- DDBB administrators
+- Web administrators
+
+## Representation systems
+
+Although there are multiple numeric bases like : Octal, decimal, or hexadecimal.
+Computers only talk and understand information in binary numeric base.
+
+Storage units go from bits to brontobytes, each ladder taht we climb, we have to know that is by doing a power of 2, increasing the exponent by 1 in each step taht we undergo upwards (towards a bigger unit of storage/measure).
+
+There is obviously a method to go from a binary number to a decimal one, and the other way around, but I won´t go into it for now.
+
+That is it for this unit, future Darius ;).
