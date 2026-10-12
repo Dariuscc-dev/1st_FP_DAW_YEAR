@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE astronautAgenda SYSTEM "rules.dtd">
+<astronautAgenda>
+
+    <astronaut id="SAT-001-Aertec">
+        <name>Nicusor</name>
+        <surname>Vlad</surname>
+        <phoneNumber>+1-555-1234</phoneNumber>
+        <email>iminsaturn@aertecsolutions.com</email>
+        <address>Saturn, 27891, Chiosa Street, 12</address>
+        <type>Explorer</type>
+        <additionalNote>He is in a crucial situation and position, as soon as we hear back from him, a lot of intelligence agencies will be quite interested in getting in touch with him, avoid at all costs</additionalNote>
+    </astronaut>
+    
+    <astronaut id="SAT-002-Aertec">
+        <name>Corina</name>
+        <surname>Doe</surname>
+        <phoneNumber>+1-555-5678</phoneNumber>
+        <email>corina.doe@aertecsolutions.com</email>
+        <address>Neptune, 12345, Galaxy Avenue, 42</address>
+        <type>Scientist</type>
+        <additionalNote>She is currently conducting research on the atmospheric composition of distant planets.</additionalNote>
+    </astronaut>
+
+    <astronaut id="SAT-003-Aertec">
+        <name>Darius</name>
+        <surname>Chiosa Chiosa</surname>
+        <phoneNumber>+1-555-9012</phoneNumber>
+        <email>darius.chiosa@aertecsolutions.com</email>
+        <address>Uranus, 54321, Star Boulevard, 84</address>
+        <type>Engineer</type>
+        <additionalNote>He is responsible for maintaining the spacecraft's systems and ensuring their optimal performance, furthermore, he is also involved in the development of new technologies for space exploration.</additionalNote>
+    </astronaut>
+
+</astronautAgenda>

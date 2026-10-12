@@ -1,0 +1,9 @@
+<!ELEMENT astronautAgenda (astronaut)>
+<!ELEMENT astronaut (name, surname, phoneNumber, email, address, type, additionalNote)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT surname (#PCDATA)>
+<!ELEMENT phoneNumber (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT additionalNote (#PCDATA)>
