@@ -108,4 +108,4 @@ There is obviously a method to go from a binary number to a decimal one, and the
 
 ![Binary to Decimal](https://media.geeksforgeeks.org/wp-content/uploads/20211220193034/binary2.PNG "Binary to Decimal")
 
-![Decimal to binary](https://cdn.teachoo.com/31aa16c1-ab2c-480d-9460-d185edd2e59b/converting-decimal-781-(base-10)-into-binary-(base-2)---teachoo.jpg "Decimal to binary")
+![Decimal to binary](https://byjus.com/gate/decimal-to-binary-conversion-notes/ "Decimal to binary")
