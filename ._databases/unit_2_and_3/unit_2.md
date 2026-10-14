@@ -64,3 +64,6 @@ Cardinality can be:
 - 1-n
 - n-n
 
+<img width="1133" height="623" alt="image" src="https://github.com/user-attachments/assets/69c4da06-3aa4-449c-b1cd-592abe900cd3" />
+
+
