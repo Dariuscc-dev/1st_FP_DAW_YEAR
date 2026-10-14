@@ -1,0 +1,46 @@
+# =========================
+# OPERATING SYSTEM FILES
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# =========================
+# JAVA & ECLIPSE
+# =========================
+# Clases compiladas
+*.class
+bin/
+target/
+
+# Metadatos del workspace y configuración de Eclipse
+.metadata/
+.settings/
+# Nota: Si trabajas en grupo a veces se guardan .project y .classpath, 
+# pero para proyectos individuales o limpios se pueden ignorar o mantener.
+# .classpath
+# .project
+
+# =========================
+# OTRAS HERRAMIENTAS / IDEs (Por si acaso)
+# =========================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# =========================
+# LOGS Y CONFIGURACIÓN LOCAL
+# =========================
+*.log
+.env
+*.tmp
+*.bak
