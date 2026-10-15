@@ -64,6 +64,7 @@ Cardinality can be:
 - 1-n
 - n-n
 
-<img width="1133" height="623" alt="image" src="https://github.com/user-attachments/assets/69c4da06-3aa4-449c-b1cd-592abe900cd3" />
+<img width="1024" height="572" alt="entity and relationship cardinality representation" src="https://github.com/user-attachments/assets/3f64bc63-1a14-4a7f-b9d6-fb16ee5b7e5d" />
+
 
 
