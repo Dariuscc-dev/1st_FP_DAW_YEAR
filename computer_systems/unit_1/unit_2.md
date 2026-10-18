@@ -26,7 +26,7 @@ The complete image we can have for form factors is:
 - Micro-ATX
 - Mini-ITX
 
-IMAGE
+<img width="1107" height="607" alt="image" src="https://github.com/user-attachments/assets/a28bc120-c189-41c2-9877-e47bffa42ccc" />
 
 ## CPU and microprocessors
 
@@ -38,7 +38,7 @@ The CPU connect directly through PCIe to the GPU and RAM, then, though the chips
 
 The socket of the CPU can be: LGA, PGA or BGA.
 
-IMAGE
+<img width="340" height="260" alt="image" src="https://github.com/user-attachments/assets/a3ae5077-2341-4d9f-beeb-20c29b3d65d9" />
 
 ## Principal memory
 
