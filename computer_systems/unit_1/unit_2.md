@@ -53,6 +53,8 @@ Expansion slots can enable us to better the specificattions fo out motherboard, 
 - Audio
 - Network adapters
 
+<img width="625" height="421" alt="image" src="https://github.com/user-attachments/assets/a1ae6dad-6491-4a90-936e-063425c806e5" />
+
 When talking about adapters, we have:
 
 - Storage connector (like SATA or M.2)
