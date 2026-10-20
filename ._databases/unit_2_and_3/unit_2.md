@@ -66,5 +66,31 @@ Cardinality can be:
 
 <img width="1024" height="572" alt="entity and relationship cardinality representation" src="https://github.com/user-attachments/assets/3f64bc63-1a14-4a7f-b9d6-fb16ee5b7e5d" />
 
+## Types of attributes  
+Attributes describe properties of entities.  
+Attributes can also belong directly to a relationship when they describe a property of the association itself (e.g., loan date or grade).  
 
+Types of attributes:  
+- Simple (atomic): indivisible attributes (e.g., DNI)  
+- Compounded: composed of several sub-attributes with their own meaning (e.g., birthdate split into day, month, year; or address split into street, city, postal code)  
+- Single-valued: takes a single value for each entity occurrence  
+- Multi-valued: can take more than one value for each entity occurrence (e.g., multiple phone numbers, multiple nationalities)  
+- Mandatory: must have a value  
+- Optional: not mandatory to have a value, can be null  
+- Derived: calculated from other existing information or attributes (e.g., age calculated from birthdate)  
 
+## Identifiers or keys  
+In every entity, there is at least one attribute or set of attributes whose values uniquely identify each occurrence.  
+- Candidate keys: all possible attributes or combinations of attributes that can uniquely identify an occurrence  
+- Primary key: the candidate key chosen to serve as the primary unique identifier based on performance and suitability  
+- Composite primary key: created when a single attribute is not enough to uniquely identify occurrences, requiring multiple attributes combined (e.g., bank account composed of bank code, branch code, control digit, and account code)  
+
+## E/R model notation  
+- Entities: represented by rectangles  
+- Weak entities: represented by double rectangles  
+- Relationships: represented by rhombuses  
+- Main identifier attributes: represented by underlined or filled circles  
+- Alternative identifier attributes: represented by distinct circles  
+- Optional attributes: represented by dashed circles  
+- Compounded attributes: represented by branching circles  
+- Multi-valued attributes: represented by double circles  
