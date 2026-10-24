@@ -113,11 +113,15 @@ Creating an Entity-Relationship model follows a systematic approach based on req
 4. **Identify Relationships:** Locate verbs connecting entities, assign meaningful names (in lower case or verb form), and attach any relationship-specific attributes.
 5. **Determine Cardinalities & Modalities:** Analyze minimum and maximum occurrences (0, 1, or N) connecting entities across each relationship.
 
-**Case Study**
+**Case Studies**
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/286b4c15-9056-4e48-bc63-d93bda841096" />
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/1d4d5522-783e-4da9-8821-6b61f1fbe65a" />
+
+<img width="1024" height="576" alt="image" src="https://github.com/user-attachments/assets/05af287a-9554-430f-9e39-1629d514ea31" />
+
+
 
 ## Extended Entity-Relationship Model (E/R Extended)
 
