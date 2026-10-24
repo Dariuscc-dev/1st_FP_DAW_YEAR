@@ -101,6 +101,7 @@ In every entity, there is at least one attribute or set of attributes whose valu
 
 <img width="1024" height="576" alt="image" src="https://github.com/user-attachments/assets/d170658a-efb0-42c6-99e3-eecf15bc9e97" />
 
+<img width="909" height="511" alt="image" src="https://github.com/user-attachments/assets/00a3fdb5-0bee-43a0-9df0-441b384e2c38" />
 
 ## Methodology to create an E/R model
 
