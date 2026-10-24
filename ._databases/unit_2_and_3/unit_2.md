@@ -94,3 +94,60 @@ In every entity, there is at least one attribute or set of attributes whose valu
 - Optional attributes: represented by dashed circles  
 - Compounded attributes: represented by branching circles  
 - Multi-valued attributes: represented by double circles  
+
+## Methodology to create an E/R model
+
+Creating an Entity-Relationship model follows a systematic approach based on requirement specifications:
+
+1. **Identify Entities:** Analyze the requirements for nouns representing main objects. Characteristics and properties should not become entities.
+2. **Identify Attributes:** Search for nouns describing properties, qualities, or identifiers belonging to entities or relationships.
+3. **Identify Keys:** Select candidate keys from attributes and choose a Primary Key (simple or composite) that uniquely identifies each occurrence.
+4. **Identify Relationships:** Locate verbs connecting entities, assign meaningful names (in lower case or verb form), and attach any relationship-specific attributes.
+5. **Determine Cardinalities & Modalities:** Analyze minimum and maximum occurrences (0, 1, or N) connecting entities across each relationship.
+
+## Extended Entity-Relationship Model (E/R Extended)
+
+The extended E/R model adds advanced abstractions to model complex domain rules:
+
+### Weak Entity Dependencies
+- **Existence Dependency:** The weak entity instances are deleted if the related strong entity instance is deleted.
+- **Identification Dependency:** The weak entity requires the primary key of the strong entity combined with its own partial key to form a unique identifier.
+
+### Hierarchies (ISA / Specialization)
+Relates a supertype entity with multiple subtype entities that share common attributes while adding specific ones.
+
+#### Completeness Constraints
+- **Total:** Every supertype instance must belong to at least one subtype.
+- **Partial:** Supertype instances do not need to belong to any subtype.
+
+#### Disjointness Constraints
+- **Exclusive:** An instance can belong to at most one subtype.
+- **Overlapping (Solapada):** An instance can belong to multiple subtypes simultaneously.
+
+| Hierarchy Type | Rule | Example |
+|---|---|---|
+| Total + Exclusive | Must belong to exactly one subtype | A Vehicle must be either a Car or a Truck. |
+| Partial + Exclusive | Belongs to at most one subtype | A Staff member can be a Teacher or a Janitor, or neither. |
+| Total + Overlapping | Must belong to one or more subtypes | A Staff member must hold at least one role (Teacher, Janitor, Technical), or multiple. |
+| Partial + Overlapping | Can belong to zero, one, or multiple subtypes | A Staff member can hold any combination of roles or none. |
+
+---
+
+## Exercises and Practicals
+
+### Case 1: Fishermen & Catch
+- **Entities:** `PESCADOR` (ID_Pescador, Nombre, Num_Licencia), `PEZ` (ID_Pez, Especie, Peso_kg).
+- **Relationship:** `PESCA` (Fecha, Hora).
+- **Cardinality:** 1:N (A fisherman catches 0..N fish; each fish is caught by exactly 1..1 fisherman).
+
+### Case 2: Tourist & Hotel
+- **Entities:** `TURISTA` (Pasaporte, Nombre, Nacionalidad), `HOTEL` (ID_Hotel, Nombre, Categoria).
+- **Relationship:** `VIAJA` (Fecha_Entrada).
+- **Cardinality:** N:M (0..N tourists stay at 0..N hotels).
+
+### Case 3: Vehicle Hierarchy
+- **Supertype:** `VEHÍCULO` (Num_bastidor, Fecha_fab, Precio).
+- **Subtypes:** 
+  - `TURISMO` (Num_puertas)
+  - `CAMIÓN` (Num_ejes, Tonelaje)
+- **Hierarchy Type:** Total and Exclusive (Every vehicle must be either a Car or a Truck).
