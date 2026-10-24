@@ -93,7 +93,14 @@ In every entity, there is at least one attribute or set of attributes whose valu
 - Alternative identifier attributes: represented by distinct circles  
 - Optional attributes: represented by dashed circles  
 - Compounded attributes: represented by branching circles  
-- Multi-valued attributes: represented by double circles  
+- Multi-valued attributes: represented by double circles
+
+<img width="1024" height="565" alt="image" src="https://github.com/user-attachments/assets/4bed7043-ad10-42e8-b77b-8d651b7a7d26" />
+
+**Case study**
+
+<img width="1024" height="576" alt="image" src="https://github.com/user-attachments/assets/d170658a-efb0-42c6-99e3-eecf15bc9e97" />
+
 
 ## Methodology to create an E/R model
 
