@@ -30,6 +30,13 @@ public class Hello {
 		
 		howManyKids = 3; // INITIALIZATION
 		
+		final double VAT = 0.21; // Constants usually go in uppercase
+		
+		public enum DayOfTheWeek { 
+		    MONDAY, TUESDAY, WEDNESDAY, 
+		    THURSDAY, FRIDAY, SATURDAY, SUNDAY
+		}; // You can use this to delimitate the input that a user can parse into the program.
+		
 	}
 
 }
