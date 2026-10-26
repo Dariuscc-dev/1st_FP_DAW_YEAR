@@ -53,8 +53,17 @@ public class Examples {
 		System.out.println (number4);
 		
 		Math.round(3.5);
-		Math.ceil(3.5);
+		Math.ceil(3.3);
 		Math.floor(3.8);
+		
+		/* This is a multiple
+		 line comment
+		 */
+		
+		/* This enables us
+		 * to create our javadoc, where our code´s documentation is being created
+		 * through the comments that we do
+		 */
 		
 	}
 
