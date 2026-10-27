@@ -14,7 +14,7 @@ public class Calculator {
 		double subtotal = units * price;
 		final double VAT = 0.21;
 		double total = subtotal * VAT;
-		System.out.println(total);
+		System.out.println("The total amount (in €) that this will cost you is = " + total + "€");
 	
 	}
 
