@@ -117,7 +117,7 @@ Creating an Entity-Relationship model follows a systematic approach based on req
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/286b4c15-9056-4e48-bc63-d93bda841096" />
 
-<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/1d4d5522-783e-4da9-8821-6b61f1fbe65a" />
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/3c7f33aa-5003-4507-b9c2-785830a409ef" />
 
 <img width="1024" height="576" alt="image" src="https://github.com/user-attachments/assets/05af287a-9554-430f-9e39-1629d514ea31" />
 
