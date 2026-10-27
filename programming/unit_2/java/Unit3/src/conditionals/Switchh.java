@@ -10,9 +10,9 @@ public class Switchh {
 		
 		System.out.println("Which day of the week are you on right now? (1-7)");
 		
-		int dia = keyboard.nextInt();
+		int day = keyboard.nextInt();
 		
-		switch (dia) {
+		switch (day) {
 		case 1:
 			System.out.println("Monday");
 			break;
