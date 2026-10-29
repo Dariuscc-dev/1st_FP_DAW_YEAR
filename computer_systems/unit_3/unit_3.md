@@ -93,6 +93,8 @@ Occupational safety regulations dictate rights and responsibilities designed to 
   - **Mandatory Signs (Blue Circle):** Eye protection mandatory, head protection mandatory, safety gloves mandatory, foot protection mandatory.
   - **Emergency / Rescue Signs (Green Rectangle/Square):** First aid station, emergency exit, safety shower, eyewash station.
 
+<img width="1424" height="720" alt="image" src="https://github.com/user-attachments/assets/15d41ebb-b127-46f4-bc15-59819050a066" />
+
 ---
 
 ## Workshop Setup & Assembly Sequence
