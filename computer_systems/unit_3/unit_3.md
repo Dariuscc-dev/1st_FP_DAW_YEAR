@@ -54,6 +54,8 @@ The power supply unit converts alternating current (**AC**) from the wall outlet
   - **20/24-pin ATX:** Primary power connector for the motherboard.
   - **4/8-pin EPS:** Dedicated clean power delivery for the CPU.
 
+<img width="470" height="402" alt="image" src="https://github.com/user-attachments/assets/eefe5e90-85e1-474c-951a-477fff7e69a4" />
+
 ### Cooling Systems
 
 Thermal management prevents overheating, stops automatic safety shutdowns, avoids **thermal throttling** (performance degradation due to excessive heat), and extends hardware lifespan.
