@@ -66,6 +66,8 @@ Thermal management prevents overheating, stops automatic safety shutdowns, avoid
 | **Liquid Cooling (AIO/Custom)** | Closed loop with coolant liquid, pump, tubing, and external radiator. | High thermal conductivity, ideal for overclocking and high TDP. |
 | **Mixed Cooling** | Combination of liquid cooling for critical nodes (CPU) and air cooling for peripheral components (GPU/VRMs). | Balanced thermal management for targeted components. |
 
+<img width="568" height="374" alt="image" src="https://github.com/user-attachments/assets/3e0edcd6-fc7d-4140-b9c1-07652745d1d0" />
+
 ---
 
 ## Occupational Risk Prevention (PRL) & Safety Regulations
