@@ -18,6 +18,8 @@ Computer cases provide structural protection and organization for internal hardw
   - **Drive Bays:** Slots located at the front for housing storage drives and optical media.
   - **Ventilation System:** Combination of fan mounts, air vents, and dust filters.
 
+<img width="1024" height="644" alt="image" src="https://github.com/user-attachments/assets/02032e5c-1328-4562-a547-5a589c2b8c37" />
+
 ### Case Form Factors
 | Form Factor | Description | Typical Use Case |
 |---|---|---|
