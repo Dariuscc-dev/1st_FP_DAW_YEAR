@@ -196,7 +196,7 @@ To visually understand hierarchies (ISA relationships), let's take the example o
 
 ---
 
-**mMore case studies**
+**More case studies**
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/9ac9d7e4-9edd-41aa-9187-8ea108492db4" />
 
