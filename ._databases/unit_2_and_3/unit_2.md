@@ -196,10 +196,7 @@ To visually understand hierarchies (ISA relationships), let's take the example o
 
 ---
 
-## Official Video Tutorials Support
+**mMore case studies**
 
-To review how to transform a practical case into a diagram, the documentation includes these three key steps:
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/9ac9d7e4-9edd-41aa-9187-8ea108492db4" />
 
-1. **Identify basic elements:** Locate entities and relationships. [Watch video (YouTube)](https://www.youtube.com/watch?v=LC_KX9Y3fZ1)[cite: 1].
-2. **Attributes and cardinalities:** Summary of entities, primary keys, and relationship limits. [Watch video (YouTube)](https://www.youtube.com/watch?v=0BuShzvrSjw)[cite: 1].
-3. **DIA Tool:** How to represent the Entity-Relationship diagram using the standardized notation in the graphical software DIA. [Watch video (YouTube)](https://www.youtube.com/watch?v=wgUl38lTRqQ)[cite: 1].
