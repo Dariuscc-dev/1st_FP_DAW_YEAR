@@ -154,35 +154,14 @@ Relates a supertype entity with multiple subtype entities that share common attr
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/39bd5e92-c0b8-4182-920c-789b5c368905" />
 
-
-
+<img width="1142" height="634" alt="image" src="https://github.com/user-attachments/assets/f30c6c65-0c16-4fd5-acfb-24067f2b4299" />
+ 
 | Hierarchy Type | Rule | Example |
 |---|---|---|
 | Total + Exclusive | Must belong to exactly one subtype | A Vehicle must be either a Car or a Truck. |
 | Partial + Exclusive | Belongs to at most one subtype | A Staff member can be a Teacher or a Janitor, or neither. |
 | Total + Overlapping | Must belong to one or more subtypes | A Staff member must hold at least one role (Teacher, Janitor, Technical), or multiple. |
 | Partial + Overlapping | Can belong to zero, one, or multiple subtypes | A Staff member can hold any combination of roles or none. |
-
----
-
-## Exercises and Practicals
-
-### Case 1: Fishermen & Catch
-- **Entities:** `PESCADOR` (ID_Pescador, Nombre, Num_Licencia), `PEZ` (ID_Pez, Especie, Peso_kg).
-- **Relationship:** `PESCA` (Fecha, Hora).
-- **Cardinality:** 1:N (A fisherman catches 0..N fish; each fish is caught by exactly 1..1 fisherman).
-
-### Case 2: Tourist & Hotel
-- **Entities:** `TURISTA` (Pasaporte, Nombre, Nacionalidad), `HOTEL` (ID_Hotel, Nombre, Categoria).
-- **Relationship:** `VIAJA` (Fecha_Entrada).
-- **Cardinality:** N:M (0..N tourists stay at 0..N hotels).
-
-### Case 3: Vehicle Hierarchy
-- **Supertype:** `VEHÍCULO` (Num_bastidor, Fecha_fab, Precio).
-- **Subtypes:** 
-  - `TURISMO` (Num_puertas)
-  - `CAMIÓN` (Num_ejes, Tonelaje)
-- **Hierarchy Type:** Total and Exclusive (Every vehicle must be either a Car or a Truck).
 
 ## The "Why" behind Extended E/R
 
