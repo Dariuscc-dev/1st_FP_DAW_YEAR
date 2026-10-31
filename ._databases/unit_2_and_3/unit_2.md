@@ -169,3 +169,44 @@ Relates a supertype entity with multiple subtype entities that share common attr
   - `TURISMO` (Num_puertas)
   - `CAMIÓN` (Num_ejes, Tonelaje)
 - **Hierarchy Type:** Total and Exclusive (Every vehicle must be either a Car or a Truck).
+
+## The "Why" behind Extended E/R
+
+The Extended E/R model expands the original model to address more complex real-world needs[cite: 1]. It embeds strict business rules directly into the diagram, solving issues such as dependencies, hierarchies, completeness constraints, and aggregation[cite: 1].
+
+### 1. Detailed Weak Entity Dependencies
+
+A weak entity is one that **cannot exist on its own**; its existence is obligatorily tied to a strong entity[cite: 1]. 
+
+| Dependency Type | The "guts" of the concept | Visual Example |
+| :--- | :--- | :--- |
+| **Existence** | The weak record is automatically deleted if we delete the strong one it depends on[cite: 1]. | **Employee** (Strong) $\rightarrow$ **Family Member** (Weak). If the employee leaves the company, their family members' data disappears from the system[cite: 1]. |
+| **Identification** | The weak record does not have enough information to uniquely identify itself[cite: 1]. It needs the primary identifier of the strong entity to be unique[cite: 1]. | **Book** (Strong, ID: ISBN) $\rightarrow$ **Copy** (Weak, ID: Copy_number). Copy "3" means nothing if we do not append the ISBN of the book it belongs to[cite: 1]. |
+
+### 2. Relationship Exclusivity
+
+This is different from hierarchies between entities. Here we are talking about **actions (rhombuses) that are mutually exclusive**[cite: 1].
+
+- **The rule:** The existence of one relationship completely prevents the existence of another[cite: 1].
+- **The example:** In an educational center, a `PROFESSOR` can teach (`IMPARTS` a `SUBJECT`) or do research (`CONDUCTS` a `RESEARCH`), but cannot do both at the same time[cite: 1]. This is graphically represented with an arc crossing both relationship lines.
+
+### 3. Deep Dive: ISA Relationships (Hierarchies)
+
+To visually understand hierarchies (ISA relationships), let's take the example of a center's `STAFF`, which is divided into subtypes: `PROFESSORS`, `JANITORS`, and `TECHNICIANS`[cite: 1].
+
+| Configuration | Explanation for beginners |
+| :--- | :--- |
+| **Overlapping and Total** | **Total:** All staff must be classified in at least one of the three roles[cite: 1]. **Overlapping:** A person can hold multiple roles at the same time (e.g., being a Professor and a Technician simultaneously)[cite: 1]. |
+| **Exclusive and Total** | **Total:** Everyone must have a role[cite: 1]. **Exclusive:** You can only choose **one**. If you are a Janitor, it is impossible for you to be a Professor[cite: 1]. |
+| **Overlapping and Partial** | **Partial:** You can be general "Staff" without having any of those three specific roles assigned yet[cite: 1]. **Overlapping:** If you do have a role, you can hold several at once[cite: 1]. |
+| **Exclusive and Partial** | **Partial:** You might not have a specific role yet[cite: 1]. **Exclusive:** The moment you are assigned one, it can only be that specific one and no other[cite: 1]. |
+
+---
+
+## Official Video Tutorials Support
+
+To review how to transform a practical case into a diagram, the documentation includes these three key steps:
+
+1. **Identify basic elements:** Locate entities and relationships. [Watch video (YouTube)](https://www.youtube.com/watch?v=LC_KX9Y3fZ1)[cite: 1].
+2. **Attributes and cardinalities:** Summary of entities, primary keys, and relationship limits. [Watch video (YouTube)](https://www.youtube.com/watch?v=0BuShzvrSjw)[cite: 1].
+3. **DIA Tool:** How to represent the Entity-Relationship diagram using the standardized notation in the graphical software DIA. [Watch video (YouTube)](https://www.youtube.com/watch?v=wgUl38lTRqQ)[cite: 1].
