@@ -131,16 +131,30 @@ The extended E/R model adds advanced abstractions to model complex domain rules:
 - **Existence Dependency:** The weak entity instances are deleted if the related strong entity instance is deleted.
 - **Identification Dependency:** The weak entity requires the primary key of the strong entity combined with its own partial key to form a unique identifier.
 
+<img width="1024" height="882" alt="image" src="https://github.com/user-attachments/assets/b4b561b4-1262-4d39-a1ac-3a64f52b27f2" />
+
 ### Hierarchies (ISA / Specialization)
 Relates a supertype entity with multiple subtype entities that share common attributes while adding specific ones.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/d57698b3-dec8-4440-ab87-5e4638a99c6b" />
 
 #### Completeness Constraints
 - **Total:** Every supertype instance must belong to at least one subtype.
 - **Partial:** Supertype instances do not need to belong to any subtype.
 
+ <img width="1024" height="207" alt="image" src="https://github.com/user-attachments/assets/b05fff70-d06c-4018-a4ec-0c9b3fbb9fe2" />
+
 #### Disjointness Constraints
 - **Exclusive:** An instance can belong to at most one subtype.
 - **Overlapping (Solapada):** An instance can belong to multiple subtypes simultaneously.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/f494c96e-50e8-4068-b09d-923ef538492a" />
+
+**Case Study**
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/39bd5e92-c0b8-4182-920c-789b5c368905" />
+
+
 
 | Hierarchy Type | Rule | Example |
 |---|---|---|
