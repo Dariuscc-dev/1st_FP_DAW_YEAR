@@ -200,4 +200,4 @@ To visually understand hierarchies (ISA relationships), let's take the example o
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/9ac9d7e4-9edd-41aa-9187-8ea108492db4" />
 
-<img width="1147" height="641" alt="image" src="https://github.com/user-attachments/assets/c3fdc504-0009-4139-a205-901fc64e30fb" />
+<img width="1143" height="642" alt="image" src="https://github.com/user-attachments/assets/58b33330-8647-443f-9940-732a9b3fb46b" />
