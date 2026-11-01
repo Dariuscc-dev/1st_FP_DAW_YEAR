@@ -1,0 +1,254 @@
+<!-- Now, using HTML5, instead of using <div> elements, we can use semantic elements like <header>, <main>, <section>, <article>, and <aside>. -->
+
+<html lang= "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mi first planetary exploration </title>
+</head>
+<body>
+
+    <header>
+      <h1> Mi first planetary exploration </h1>
+    </header>
+
+    <nav>
+        This is the navigation menu.
+    </nav>
+
+    <main>
+
+      <section>
+        <h2> Introduction </h2>
+        <article> This is my first planetary exploration, I will be exploring the planet Mars. </article>
+      </section>
+
+      <section>
+        <h2> Objectives </h2>
+        <ul>
+          <li> To explore the surface of Mars </li>
+          <li> To collect samples of Martian soil </li>
+          <li> To study the atmosphere of Mars </li>
+        </ul>
+      </section>
+      
+      <aside>
+        <h2> Resources </h2>
+        <p> I will be using a rover to explore the surface of Mars. </p>
+        <p> I will also be using a drone to collect samples of Martian soil. </p>
+      </aside>
+
+
+        <!-- This is an unordered list -->
+
+        <ul>
+        <li> Resource 1 </li>
+        <li> Resource 2 </li>
+        <li> Resource 3 </li>
+        </ul>
+
+        <!-- This is an ordered list -->
+
+        <ol>
+        <li> Step 1 </li>
+        <li> Step 2 </li>
+        <li> Step 3 </li>
+        </ol>
+
+        <!-- This is a definition list -->
+
+        <dl>
+        <dt> Term 1 </dt>
+        <dd> Definition 1 </dd>
+        <dt> Term 2 </dt>
+        <dd> Definition 2 </dd>
+        </dl>
+
+        <!-- You can also play with different list types and attributes -->
+
+        <ol type="A">
+        <li> Step 1 </li>
+        <li> Step 2 </li>
+        <li> Step 3 </li>
+        </ol>
+        
+        <ol type="i">
+        <li> Step 1 </li>
+        <li> Step 2 </li>
+        <li> Step 3 </li>
+        </ol>
+
+        <ol type="I">
+        <li> Step 1 </li>
+        <li> Step 2 </li>
+        <li> Step 3 </li>
+        </ol>
+
+        <ol reversed>
+        <li> Step 1 </li>
+        <li> Step 2 </li>
+        <li> Step 3 </li>
+        </ol>
+
+        <ol start="3039">
+        <li> Step 1 </li>
+        <li> Step 2 </li>
+        <li> Step 3 </li>
+        </ol>
+
+        <!-- This are different types of table-->
+
+        <table>
+            <tr>
+                <th> Column 1 </th>
+                <th> Column 2 </th>
+                <th> Column 3 </th>
+            </tr>
+
+            <tr>
+                <td> Row 1, Column 1 </td>
+                <td> Row 1, Column 2 </td>
+                <td> Row 1, Column 3 </td>
+            </tr>
+
+            <tr>
+                <td> Row 2, Column 1 </td>
+                <td> Row 2, Column 2 </td>
+                <td> Row 2, Column 3 </td>
+            </tr>
+
+        </table>
+
+        <table border="1">
+
+            <caption> This is a table caption </caption>
+
+            <thead>
+                <tr>
+                    <th> Column 1 </th>
+                    <th> Column 2 </th>
+                    <th> Column 3 </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td> Row 1, Column 1 </td>
+                    <td colspan="2"> Row 1, Column 2 </td>
+                </tr>
+
+                <tr>
+                    <td> Row 2, Column 1 </td>
+                    <td> Row 2, Column 2 </td>
+                    <td> Row 2, Column 3 </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td> Footer 1 </td>
+                    <td> Footer 2 </td>
+                    <td> Footer 3 </td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+        <table border="1">
+
+            <caption> This is a table caption </caption>
+
+                <tr>
+                    <td rowspan="2"> Astronauts </td>
+                    <td> Joseph </td>
+                </tr>
+
+                <tr>
+                    <td> Alex </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    <br><br><br><br>
+
+        <form action="/register" method="post">
+
+            <label for="name"> Name: </label>
+            <input type="text" id="name" name="name" required>
+
+            <br><br>
+
+            <label for="email"> Email: </label>
+            <input type="email" id="email" name="email" required>
+
+            <br><br>
+
+            <label for="message"> Message: </label>
+            <textarea id="message" name="message" required></textarea>
+
+            <br><br>
+
+            <label for="date"> Date: </label>
+            <input type="date" id="date" name="date" required>
+
+            <br><br>
+
+            <label for="time"> Time: </label>
+            <input type="time" id="time" name="time" required>
+
+            <br><br>
+
+            <label for="file"> File: </label>
+            <input type="file" id="file" name="file" required> 
+
+            <br><br>
+
+            <label for="progress"> Progress: </label>
+            <progress id="progress" name="progress" value="0" max="100"></progress>
+
+            <br><br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+        <form action="/register" method="post">
+
+            <label>
+                <input type="radio" name="gender" value="male" checked required> Male
+            </label>
+
+            <label>
+                <input type="radio" name="gender" value="female" required> Female
+            </label>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+        </form>
+
+            <label>
+                <input type="checkbox" name="gender" value="male" required> Male
+            </label>
+
+            <label>
+                <input type="checkbox" name="gender" value="female" required> Female
+            </label>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </main>
+
+
+<footer>
+    <p> &copy; 2024 Mi first planetary exploration </p>
+</footer>
+
+</body>
+
+</html>
