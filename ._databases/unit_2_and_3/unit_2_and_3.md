@@ -200,4 +200,8 @@ To visually understand hierarchies (ISA relationships), let's take the example o
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/9ac9d7e4-9edd-41aa-9187-8ea108492db4" />
 
-<img width="1143" height="642" alt="image" src="https://github.com/user-attachments/assets/58b33330-8647-443f-9940-732a9b3fb46b" />
+<img width="1142" height="640" alt="image" src="https://github.com/user-attachments/assets/4e7dbfb6-842a-4468-98a1-7af076f9ec3c" />
+
+**ER diagram notation**
+
+From now on I use the look-across convention for (min,max) cardinalities: the cardinality is written next to the target entity. For example, “a book has one or more copies” is shown as (1,N) next to Copy, and “a copy belongs to exactly one book” as (1,1) next to Book. This is the usual convention in Chen notation, UML and crow’s foot notation. Earlier diagrams in this repository may follow the opposite convention (look-here).
