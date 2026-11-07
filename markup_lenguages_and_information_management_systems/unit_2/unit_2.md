@@ -11,11 +11,11 @@
 
 ## Web standards
 
-They are there to serve a purpose, to make the web open, accessible and open.
+Web standards exist to keep the web open, accessible and interoperable.
 
-We follow web standards to facilitate the work of functions like =
+Following them makes these things easier:
 
-- Maintainement
+- Maintenance
 - Compatibility
 - Accessibility
 - SEO and performance
@@ -39,16 +39,16 @@ HTML structures, CSS presents, and JavaScript adds behavior.
 
 ```html
 <!DOCTYPE html>
-<html lang= "en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mi first planetary exploration </title>
+    <title>My first planetary exploration</title>
 </head>
 <body>
-    <h1>Mi first space exploration</h1>
-    <p>Hello martian, it is a true pleasure meeting you, I don´t undestand a single thing that you´re saying.</p>
-    <a href= "https://www.nasa.gov/marshall/marshall-space-flight-center-history/"> Marshall </a>
+    <h1>My first space exploration</h1>
+    <p>Hello Martian, it is a true pleasure to meet you. I don't understand a single thing you're saying.</p>
+    <a href="https://www.nasa.gov/marshall/marshall-space-flight-center-history/">Marshall</a>
 </body>
 </html>
 ```
@@ -178,7 +178,7 @@ selector {
 ### Types of Selectors
 - **Basic:**
   - **Universal (`*`):** Applies to all elements.
-  - **Tag (`p`, `<h1>`, `<div>`):** Applies to all elements of the specified type.
+  - **Type (`p`, `h1`, `div`):** Applies to all elements of the specified type.
   - **Class (`.my-class`):** Selects elements with `class="my-class"`. Reusable.
   - **ID (`#my-id`):** Selects the element with `id="my-id"`. Must be unique.
 - **Combinators:**
