@@ -1,59 +1,59 @@
-# Systems of informmation storage
+# Information Storage Systems
 
 ## Contents
 
-- Communication system
+- Communication systems
 - Information systems
 - File systems
-- Storage support systems
+- Storage media
 - Databases
-- Database management systems.
+- Database management systems
 
-## Communication system
+## Communication systems
 
-As the amount of data and it´s availability speed demands keep on growing, a solution was needed.
-Information systems proposed as a perfect match for a solution.
+As the amount of data and the demand for faster access kept growing, a better solution was needed.
+Information systems were proposed as that solution.
 
 ## Information systems
 
-They are a group of sorted elements, relationed between them according to certain rules.
+An information system is a set of organized elements that relate to each other according to certain rules.
 
-Basic functions of them are = Data gathering, data storage, data processing, and data elaboration and presentation.
+Basic functions: data gathering, data storage, data processing, and data elaboration and presentation.
 
-Components of an informmation system = Data, hardware, software and peopleware.
+Components of an information system: data, hardware, software and peopleware.
 
 ## File systems
 
-A File, is a set of sorted and stored data or information, with the goal of later on, consulting or using it.
+A file is a set of organized and stored data, kept so it can be consulted or used later on.
 
-With a file, you can do operations like = open, close, read, write, seek, eof (end of file).
+Operations you can perform on a file: open, close, read, write, seek and eof (end of file).
 
-Files can be differentiated between them by their storage structure = Plain or binary
+Files can be classified by their storage format: plain text or binary.
 
-OR by their internal structure = Secuential, direct access/random, indexed.
+Or by their internal organization: sequential, direct/random access, or indexed.
 
-## Storage support systems 
+## Storage media
 
-Storage can be taken care of with various storage unit types, in this case, I will focus on naming only permanent storage unit options = SSD, Pendrives, SD and MicroSD cards, HDD, SSHD, Floppy Disks, CD, DVD, Blu-ray, Magnetic Tapes...etc.
+Data can be stored on many types of storage units. Here I only list permanent (non-volatile) storage: SSD, USB flash drives, SD and microSD cards, HDD, SSHD, floppy disks, CD, DVD, Blu-ray, magnetic tapes, etc.
 
 ## Databases
 
-Databases are phisically designed around the idea of being useful in any environment, the most important thing is the information stored.
-They focused on data and not in the process.
-They also took care of minimizing redundancy.
+Databases are designed to be usable from any application or environment. What matters most is the stored information itself.
+They focus on the data, not on the process.
+They also aim to minimize redundancy.
 
-Databases can be = Hierarchical, network, relational, object-oriented, and object-relational.
+Types of databases: hierarchical, network, relational, object-oriented, and object-relational.
 
 ## Database management systems
 
-Characteristics of them are =
+Characteristics of a DBMS:
 
-- Independence of modifying the underlying applications that use the data we are manipulating.
-- Redundancy is minimum.
-- It is consistent.
-- It is secure
-- It has integrity
-- It enables/facilitates the task of making data backups.
-- It facilitates the task of managing concurrent access from users and acts a as a central control unit to prevent inconsistencies in the database.
+- Data independence: the underlying data can change without having to modify the applications that use it.
+- Minimal redundancy.
+- Consistency.
+- Security.
+- Integrity.
+- Makes it easier to create data backups.
+- Manages concurrent access from multiple users and acts as a central control point to prevent inconsistencies in the database.
 
-With DBMS you can = Administer and create data structures, manipulate data, have recuperation tools, make data backups, and tools for exporting and importing data.
+With a DBMS you can create and administer data structures, manipulate data, use recovery tools, make backups, and import and export data.
