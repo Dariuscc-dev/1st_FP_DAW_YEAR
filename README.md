@@ -10,7 +10,7 @@
 
 ## What this is about
 
-This repository covers both the theory and hands-on practice from my first year of Web Application Development (DAW) in the TRIDENTE program at UTAMED.
+This repository covers both the theory and the practical work from my first year of Web Application Development (DAW) in the TRIDENTE program at UTAMED.
 
 I use it as an open technical notebook: broken-down notes to actually understand the why behind each concept, class exercises, assignments, small projects, and reference material I rely on to review and track my progress.
 
