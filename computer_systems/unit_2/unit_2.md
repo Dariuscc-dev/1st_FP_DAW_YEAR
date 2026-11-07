@@ -1,25 +1,26 @@
-# Hardware and mountage
+# Hardware and Assembly
 
 ## Contents
 
 - Motherboard
 - CPU and microprocessors
-- Principal memory
-- Storeage and secondary memory
+- Main memory
+- Storage and secondary memory
 - Expansion cards
+- Peripherals
 
 ## Motherboard
 
-Phisically printed ircuit which connects every internal component and also external peripherals.
+The motherboard is the printed circuit board that connects every internal component and the external peripherals.
 
-Form factor is also a very important thing, as it standarizes and makes motherboards inter-compatible.
+The form factor is very important: it standardizes motherboard sizes and makes them compatible with cases and other components.
 
-The market standard is either: 
+The two main market standards are:
 
 - ATX (developed by Intel)
-- ITX (developed by VIA technologies)
+- ITX (developed by VIA Technologies)
 
-The complete image we can have for form factors is:
+Common form factors, from largest to smallest:
 
 - E-ATX
 - ATX
@@ -30,37 +31,37 @@ The complete image we can have for form factors is:
 
 ## CPU and microprocessors
 
-The chipset is a set of integrated circuits that help the CPU communicate and manage processes (memory, processes, peripherals...etc).
+The chipset is a set of integrated circuits that helps the CPU communicate with and manage the rest of the system (memory, peripherals, etc.).
 
-The chipset was before divided into horthbridge and southbridge, but later evolver to a single, enerything-included chipset.
+The chipset used to be split into a northbridge and a southbridge. It later evolved into a single chip that includes everything.
 
-The CPU connect directly through PCIe to the GPU and RAM, then, though the chipset (DMI/DFI Bus), it connects to the chipset (PCH/FCH), which helps the CPU connect to all other components and peripherals (SATA, NVMe PCIe x4, USB 3.2, Audio, LAN RJ-45, BIOS / UEFI).
+Today the CPU connects directly to the GPU (through PCIe) and to the RAM (through its integrated memory controller). It then connects to the chipset (Intel PCH / AMD FCH) through a dedicated link (DMI on Intel). The chipset handles the connection to the rest of the components and peripherals: SATA, NVMe (PCIe x4), USB 3.2, audio, LAN (RJ-45) and the BIOS/UEFI.
 
-The socket of the CPU can be: LGA, PGA or BGA.
+The CPU socket can be LGA, PGA or BGA.
 
 <img width="340" height="260" alt="image" src="https://github.com/user-attachments/assets/a3ae5077-2341-4d9f-beeb-20c29b3d65d9" />
 
-## Principal memory
+## Main memory
 
-We have slots, which allows us to connect RAM (DDR1 -DDR5).
+The motherboard has slots for RAM modules (DDR to DDR5).
 
-It can be dual-channel and quad-channel.
+Memory can work in dual-channel or quad-channel mode.
 
-Expansion slots can enable us to better the specificattions fo out motherboard, this can be done through :
+Expansion slots let us improve the capabilities of the motherboard by adding:
 
 - SSDs
 - GPUs
-- Audio
+- Sound cards
 - Network adapters
 
 <img width="625" height="421" alt="image" src="https://github.com/user-attachments/assets/a1ae6dad-6491-4a90-936e-063425c806e5" />
 
-When talking about adapters, we have:
+Types of connectors:
 
-- Storage connector (like SATA or M.2)
-- Audio connectors (like HDMI or VGA)
+- Storage connectors (like SATA or M.2)
+- Video connectors (like HDMI or VGA)
 - Network connectors (like Ethernet)
-- Energy connectors 
+- Power connectors
 
 ## CPU and Microprocessors (Continued)
 
@@ -95,17 +96,17 @@ When talking about adapters, we have:
 
 ---
 
-## Principal Memory
+## Main Memory
 
 ### Memory Hierarchy
 1. **CPU Registers** (Highest speed/cost, lowest capacity).
 2. **CPU Cache (L1, L2, L3)** (SRAM).
-3. **Principal Memory (RAM)** (DRAM, volatile).
+3. **Main Memory (RAM)** (DRAM, volatile).
 4. **Secondary Storage** (SSD / HDD, non-volatile).
 5. **Network / Cloud Storage** (NAS, SAN, Cloud).
 
 ### RAM Performance Parameters
-- **Bus Width:** Amount of data transferred per second (currently 64 bits).
+- **Bus Width:** Amount of data transferred in each transfer cycle (64 bits per channel on modern RAM).
 - **CAS Latency (CL):** Response time delay to a CPU command (measured in clock cycles).
 - **DRAM vs. SRAM:**
   - **DRAM (Dynamic RAM):** Requires continuous data refreshing; used for main system memory.
