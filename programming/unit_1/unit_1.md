@@ -1,121 +1,116 @@
-# Introduction to programming
-
+# Introduction to Programming
 
 ## Contents
 
-- Data and digital society
+- Data and the digital society
 - Variables and constants
-- Problem resolution
+- Problem solving
 - Algorithms
 - First program
 - Errors
 
-## Data and digital society
+## Data and the digital society
 
-Data is something we can qualify or quantify
+Data is anything we can describe (qualify) or measure (quantify).
 
-The same reality can have multiple interpretations = Data, information, knowledge and wisdom.
+The same reality can be seen at different levels: data, information, knowledge and wisdom.
 
-Data sycle = Entry, process, output, and feedback.
+Data cycle: input, processing, output and feedback.
 
-(John) von Neumann´s architecture, the one big idea behind computers, tablets, phones, and IoT devices.
+The von Neumann architecture (John von Neumann) is the core idea behind computers, tablets, phones and IoT devices.
 
-That enabled humanity to build computers (programmable machines), which was the programmable machine that was and still is able to ingest data and process code that makes it possible to (mixed with data) build programs.
+It made it possible to build programmable machines: computers that take in data and run code, and that combination of data and code is what we call a program.
 
 ## Variables and constants
 
-A variable can change during the programs execution.
+The value of a variable can change while the program runs.
 
-A constant value cannot chage.
+The value of a constant cannot change.
 
-Example of a changing variable
+Example of a variable that changes:
 
 ```java
 int age = 17;
 age = 18;
 System.out.println(age);
-// The final value of the variable is 18, so that is the value that will be printed.
+// The final value of the variable is 18, so that is the value printed.
 ```
 
-Example of declaring a constant (using the reserved word "final")
+Example of a constant (declared with the reserved word `final`):
 
 ```java
 final double VAT = 0.21;
 double price = 12.99;
 double total = price + price * VAT;
-System.out.println(total); // Results in 15.7179
+System.out.println(total); // Prints 15.7179
 ```
 
-Useful fact = In Java, the convention is also to use camelCase.
+Variables and constants have three basic characteristics: an identifier, a type and a value.
 
-Three basic characteristics of variables and constants = They have and identifier, a type, and a value.
+An identifier must be clear and meaningful. It can contain letters, numbers and underscores, but no spaces. In Java the convention is lowerCamelCase for variables and UPPER_CASE with underscores for constants. Avoid accents, unusual symbols and names that don't explain anything.
 
-And identifier has to be clear and significant, it can contain letters, numbers, underscores but no spaces, it is recommended to use lowerCamelCase, constants in uppercase with underscores, and try to avoid accents, rare symbols, and names that don´t explain nothing.
-
-Data types = Integers (int), characters (char), text (string), real number (double), and logic (boolean).
+Basic data types: integers (`int`), characters (`char`), text (`String`), real numbers (`double`) and logical values (`boolean`).
 
 ## Problem solving
 
-Quality of code depends on the quality of the analysis, we have to truly make an effort an digest the problem we have at hand precisely.
+The quality of the code depends on the quality of the analysis, so it is worth taking the time to understand the problem properly.
 
-We are trying to build a program, but that program revolves around building a solution that will hopefully solve a problem. 
+A program is a solution to a problem. Whether that solution works depends on analyzing the problem correctly and designing a good algorithm for it.
 
-That solution is involved and influenced by analyzing the problem at hand correctly and creating a good algorythm for it.
+So the process is: problem, analysis, algorithm. Ideally this is done in cycles, not just once.
 
-So the program revolver around = Problem, analysis, algorythm, preferably in cicles and not only once.
+Pólya's method: understand the problem, make a plan, carry out the plan, review the solution.
+And repeat the whole process in cycles (iterating).
 
-Pólya method = Understand the problem, create a plan, execute the plan, revise the solution.
-And all of that, in cycles (iterating).
+## Algorithms
 
-## Algorithm
+An algorithm describes, step by step and following a logic, the operations needed to transform input data into an output result.
 
-It describes, following logic, the operations necessary to transform data into an output result.
+So: input, process, output.
 
-So = Entry - Process - Output
+Algorithms can be represented with flowcharts or pseudocode.
 
-You can represent algorithms in = Flowchart, pseudocode.
+A flowchart uses these symbols: terminal (start/end), input/output, process, and flow lines.
 
-A Flowchart consists of = Terminal, entry/output, process, and the flow chart´s line.
+Pseudocode rules:
+- One instruction per line.
+- The first instruction marks the start and the last one marks the end.
+- Use simple words.
+- Code must be indented.
+- It must be clear, ordered and easy to turn into real code.
 
-Pseudocode =
-Every instruction has to be in a single line.
-First instruction marks the start and the last one the end.
-Use simple words.
-Code has to be idented.
-It has to be clear, ordered and easy to transform into real code.
+From problem to program: problem, algorithm, code (Java, for example), program (`.java` file).
 
-The process of going from the problem to the program = Problem - Algorithm - Code (Java, for example) - Program (.java file).
+Program = data structures + algorithms.
 
-Program = Data types + Algorithms
-
-## First Program
+## First program
 
 ```java
 public class HelloFuture {
-    public static void main(String[]args){
+    public static void main(String[] args) {
         System.out.println("Hello future Darius!");
     }
 }
 ```
 
-- We use public to indicate visibility.
-- We have to use class always in Java as it is a programming lenguage oriented to objectives.
-- HelloWorld is the identifier of the class.
-- "main" is the point where the execution starts.
-- "static" indicates that it is part of the parent class and it can be invoked without creating an object.
-- "void" indicates that it doesn´t output a value.
-- String[]args enables the console to receive arguments.
-- This {} delimits code blocs, classes and methods.
-- This () contains parammeters or arguments of a method.
-- This "" delimits strings
-- This ; finalizes an instruction.
+- `public` sets the visibility.
+- In Java, all code must live inside a class, because Java is an object-oriented language.
+- `HelloFuture` is the identifier (name) of the class.
+- `main` is the method where execution starts.
+- `static` means the method belongs to the class itself and can be called without creating an object.
+- `void` means the method does not return a value.
+- `String[] args` lets the program receive arguments from the console.
+- `{}` delimit code blocks, classes and methods.
+- `()` contain the parameters or arguments of a method.
+- `""` delimit strings.
+- `;` ends an instruction.
 
-In Java, we can also differentiate between tokens, reserved words and identifiers.
+In Java we also distinguish between tokens, reserved words and identifiers.
 
-Code in java goes from = Source code (.java) to a compiler to bytecode to JVM.
+Java code goes from source code (`.java`) to the compiler, which produces bytecode (`.class`), which is then run by the JVM.
 
 ## Errors
 
-Two usual moments where failure happens while compiling or while executing.
+Errors usually show up at two moments: at compile time or at runtime.
 
-Compilation errors can be = Lexicographic, syntactic or semantic.
+Compilation errors can be lexical, syntactic or semantic.
