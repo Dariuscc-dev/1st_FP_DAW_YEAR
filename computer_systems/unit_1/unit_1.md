@@ -3,108 +3,113 @@
 ## Contents
 
 - Introduction
-- Basic structure of a Computer System
+- Basic structure of a computer system
 - Hardware
 - Software
 - Human factor
-- Representation systems
+- Number systems
 - Activity
 
 ## Introduction
 
-Computer Science is the science that enables us to manage information automatically, currently done with computers.
+Computer science is the science of processing information automatically, which today is done with computers.
 
-It is a crucial tool in most human endeavours.
+It is a key tool in almost every field of human activity.
 
-## Basic structure of a Computer System
+## Basic structure of a computer system
 
-The ecosystem is made of hardware, software (it can also be called firmware, which is specifically developed for a specific piece of hardware) and users/peopleware.
+A computer system is made up of hardware, software and users (peopleware). Firmware is a special type of software written for a specific piece of hardware.
 
 ## Hardware
 
-A PC has to be made of at least = processing power (CPU), storage (RAM and secondary memory), peripherals (input/output/mixed), and the Motherboard (which supports everything previously mentioned).
+At a minimum, a PC needs processing (CPU), memory (RAM and secondary storage), peripherals (input, output or mixed) and a motherboard that connects everything.
 
-Von Newmann´s architecture, which was first described in 1945, still is the architecture use din today´s computers.
+The von Neumann architecture, first described in 1945, is still the architecture used in today's computers.
 
-The architecture consists of a CPU, where there, things like the arithmetic-logical unit, the control unit and registers (input, storage or state) are located.
+It consists of a CPU, which contains the arithmetic logic unit (ALU), the control unit (CU) and the registers.
 
-From there, through buses, that CPU is connected to the Storage unit (which can be primary and volatile, or secondary and permanent), and the relation between them is obviously bilateral in terms of communication/work.
+The CPU is connected through buses to the memory unit (primary and volatile, or secondary and permanent). Communication between them goes both ways.
 
-Last, but not least, we hava the input/output unit, also connected through buses, to connect peripherals.
+Finally, there is the input/output unit, also connected through buses, which is used to connect peripherals.
 
-Storage/memory can be represented like a pyramid, where the top is the registers of the CPU, which is the fastest, smallest and most expensive one.
+Memory can be represented as a pyramid. At the top are the CPU registers: the fastest, smallest and most expensive memory.
 
-The next one is RAM, which is the principal memory but is also volatile and need electricy for it to store data, when not receiving energy, it dumps every bit of information stored.
+Below that is RAM, the main memory. It is volatile: it needs power to keep data, and loses everything stored in it as soon as the power goes off.
 
-The next one is the secondary memory, which is  the slowest one, but also the cheapest, and it has massive storage capacity.
+At the bottom is secondary storage: the slowest but also the cheapest, with a very large capacity.
 
-The closer you get to the CPU, the more expensive (bigger cost for bit) and fast it gets.
+The closer the memory is to the CPU, the faster and more expensive (higher cost per bit) it gets.
 
-We can also look at it like = Registers (general or specific purpose), caches (level 1, 2 or 3), primary memory (RAM), and Secondary Memory (e.g. SSD, HDD, Cloud...etc).
+From top to bottom: registers (general or specific purpose), cache (L1, L2 and L3), main memory (RAM) and secondary storage (e.g., SSD, HDD, cloud).
 
-Registers can be : CP, RI, AC, RT, RE, RM, and RD.
+Main CPU registers:
 
-The input/output unit realizes the necessary connections and adaptations of the CPU to input/output/mixed peripherals.
+- PC (Program Counter): address of the next instruction.
+- IR (Instruction Register): instruction currently being executed.
+- ACC (Accumulator): stores intermediate ALU results.
+- TR (Temporary Register): holds temporary operands for the ALU.
+- SR (Status Register): flags with the state of the last operation (zero, carry, overflow...).
+- MDR (Memory Data Register): data read from or written to memory.
+- MAR (Memory Address Register): memory address being accessed.
 
-Buses can be specifically assigned to certain tasks like = Entry, direction, or control.
+The input/output unit handles the connections and adaptations needed between the CPU and the input, output or mixed peripherals.
 
-The cycle of instructions goes like this :
+There are three types of buses, depending on what they carry: data, address and control.
 
-- First, the CPU (more precisely, the CU) looks for the instructions of the program (fetch) alongside with the CP, and then the instructions are retrieved from the RAM and brought to the CPU through buses, the instructions are saved in the RI.
-- The CU decodes the instructions.
-- After those first steps, the execution phase has started.
-- If operands are needed, the CU retrieves them from the RAM to load them into the registers of the ALU.
-- The CU signals the ALU to perform the isntructed operations and/or logic.
-- The results are then stored in registers such as the AC or written back into the primary memory.
+The instruction cycle works like this:
+
+- Fetch: the control unit uses the PC to find the next instruction, which is read from RAM, carried to the CPU through the buses and stored in the IR.
+- Decode: the control unit decodes the instruction.
+- Execute: the execution phase starts.
+- If operands are needed, the control unit fetches them from RAM and loads them into the ALU registers.
+- The control unit tells the ALU which arithmetic or logic operation to perform.
+- The result is stored in a register such as the ACC or written back to main memory.
 
 ## Software
 
-Software can be differentiated in three levels :
+Software can be divided into three levels:
 
-- Application level
-- Programming software level
-- Base software
+- Application software
+- Programming software
+- System (base) software
 
-Software can also be :
+By its freedom of use, software can be:
 
-- Private software
-- Public software (respects all 4 freedom levels)
+- Proprietary software
+- Free software (respects the four essential freedoms: use, study, share and modify)
 
-Some suitable concepts according to our current context are : freeware, adware, sharewere, abandonware, copyleft, and public.
+Other related concepts: freeware, adware, shareware, abandonware, copyleft and public domain.
 
-Software can also be differentiated ny its license :
+Software can also be classified by its license:
 
 - Open source
 - Freeware
 - Shareware
-- Public
+- Public domain
 
-An organization that helps individuals manage license types is Creative Commons (CC)
+Creative Commons (CC) is an organization that offers standard licenses so creators can choose how others may use their work.
 
 ## Human factor
 
-Users can be :
+Users can be:
 
-- Final users (the majority of users)
+- End users (the majority)
 
-OR Professional users, which can be specialized :
+Or professional users, who specialize in roles such as:
 
 - Maintenance technicians
-- Developers/Programmers
+- Developers/programmers
 - Network administrators
-- DDBB administrators
+- Database administrators
 - Web administrators
 
-## Representation systems
+## Number systems
 
-Although there are multiple numeric bases like : Octal, decimal, or hexadecimal.
-Computers only talk and understand information in binary numeric base.
+There are several number bases, like octal, decimal and hexadecimal, but computers only work with binary.
 
-Storage units go from bits to brontobytes, each ladder taht we climb, we have to know that is by doing a power of 2, increasing the exponent by 1 in each step taht we undergo upwards (towards a bigger unit of storage/measure).
+Storage units go from bits up to brontobytes. Each step up to the next unit is a power of 2: the exponent increases by 10 at each step (1 KiB = 2^10 bytes, 1 MiB = 2^20 bytes, and so on).
 
-There is obviously a method to go from a binary number to a decimal one, and the other way around.
-
-
+There are methods to convert a binary number to decimal and the other way around.
 
 ![Binary to Decimal](https://media.geeksforgeeks.org/wp-content/uploads/20211220193034/binary2.PNG "Binary to Decimal")
 
