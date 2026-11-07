@@ -1,61 +1,62 @@
-# Characteristics of markup lenguages.
+# Characteristics of Markup Languages
 
-## Contents 
+## Contents
 
-- Markup lenguages
+- Markup languages
 - Basic concepts
 - Evolution
-- Initiation to XML
-- Name spacing
+- Introduction to XML
+- Namespaces
 
-## Markup lenguages
+## Markup languages
 
-Useful to add a markup/tag to content, it enables you to differentiate parts of a document, what every part means and how it should be displayed.
+A markup language adds marks (tags) to content. This lets you separate the parts of a document, say what each part means, and define how it should be displayed.
 
-It is not a programming lenguage.
+It is not a programming language.
 
-Some examples are = HTML, XML, Markdown...
+Some examples: HTML, XML, Markdown...
 
 ```xml
 <planetEarth>
-    <age> 4.5 Billion Years </age>
-    <diameter unit_of_measure = "kilometers"> 12800 </diameter>
+    <age>4.5 billion years</age>
+    <diameter unit="kilometers">12800</diameter>
 </planetEarth>
 ```
 
-Types of markup lenguages = Presentation, procedure, descriptive or semantic, and lean (LML).
+Types of markup languages: presentational, procedural, descriptive (semantic), and lightweight markup languages (LML).
 
 ## Basic concepts
 
-It is plain text, inserted marking, intuitive elements, and versatility.
-5 parts of markup lenguages = Content, labels/markup, element, atributes, and metadata.
+Main features: plain text, embedded markup, intuitive elements and versatility.
 
-A blank element has no content.
+The 5 parts of a markup language: content, tags/marks, elements, attributes and metadata.
 
-Metadata can indicate things like = Author, charset, and description.
+An empty element has no content.
 
-## Evolution of markup lenguages
+Metadata can describe things like the author, the character set (charset) and a description.
 
-Every markup lenguage has a common origin = SGML.
-It is very potent, although very complex as well.
+## Evolution of markup languages
 
-SGML has = SGML declaration, DTD, document instance, and the parser.
+Most modern markup languages come from a common origin: SGML.
+SGML is very powerful, but also very complex.
 
-HTML is for the web, based in SGML.
+An SGML document has an SGML declaration, a DTD, the document instance and a parser.
 
-XML is the current most used alternative to SGML, still powerfull, less complex.
+HTML is the language of the web and is based on SGML.
 
-XML is extensible, descriptive, separate from the design, interoperable, strict, open.
+XML is today the most widely used alternative to SGML. It is still powerful, but much less complex.
 
-## Initiation to XML 
+XML is extensible, descriptive, independent from presentation, interoperable, strict and open.
 
-Parts of an XML document are = Prologue, DOCTYPE and body.
+## Introduction to XML
 
-There are also minimum rules in XML, as there are also special characters and entities in XML.´
+The parts of an XML document are the prolog, the DOCTYPE declaration and the body.
 
-Comments can be made using <!-- and -->
+XML has a set of minimum rules (well-formedness), and it also has special characters and entities.
 
-We use namespaces to prevent 2 names meaning different things.
+Comments are written between `<!--` and `-->`.
+
+Namespaces prevent conflicts when the same name means different things.
 
 ```xml
 <earthdata
@@ -64,7 +65,7 @@ We use namespaces to prevent 2 names meaning different things.
 </earthdata>
 ```
 
-Example of namespaces with prefixes.
+Example of namespaces with prefixes:
 
 ```xml
 <earthdata
@@ -72,14 +73,14 @@ Example of namespaces with prefixes.
     xmlns:wd="https://eu.usatoday.com/story/news/2015/09/02/earth-three-trillion-trees/71578324/">
 
     <wtr:water>
-        <wtr:amount amount = "Liters"> 1,386 × 10²¹ </wtr:amount>
+        <wtr:amount unit="liters">1.386 × 10²¹</wtr:amount>
     </wtr:water>
 
     <wd:wood>
-        <wd:amount amount = "(European) Billions of kgs"> 1,386 × 10²¹ </wd:amount>
+        <wd:amount unit="trees">3 × 10¹²</wd:amount>
     </wd:wood>
 
 </earthdata>
 ```
 
-In this example, you can refer to two different things using "amount", because they come from different parents.
+In this example, both elements are called "amount", but there is no conflict because each one belongs to a different namespace.
