@@ -1,65 +1,68 @@
-# Subject where I will learn what software is, how it is developed and what models are used.
+# Unit 1: Software Development
+
+What software is, how it is developed, and which development models are used.
 
 ## Contents
 
-- Software, programs and algorithms.
-- Programming lenguages and their clasifications.
-- Execution (Origin, object, executable, and virtual machines).
-- Stages in application development.
-- Development models and AGILE methodologies.
-- SCRUM and development tools.
+- Software, programs and algorithms
+- Programming languages and their classification
+- Execution (source code, object code, executables and virtual machines)
+- Stages of application development
+- Development models and Agile methodologies
+- Scrum and development tools
 
-## Software, programs and algorithms.
+## Software, programs and algorithms
 
-We have to differentiate between a computer program and software.
+A computer program and software are not the same thing.
 
-A computer program is a set of instructions and data in a specific programming lenguage to solve a problem.
+A computer program is a set of instructions and data, written in a specific programming language, that solves a problem.
 
-A software, can be a set/combination of programs, proceedures, documentation, rules, data, images, icons and config. files.
+Software is a broader concept: a combination of programs, procedures, documentation, rules, data, images, icons and configuration files.
 
-In a computer system, we also have to differentiate between hardware (it can be touched), software (it can be executed) and peopleware (they create, use, and maintain the system).
+In a computer system we also distinguish between hardware (the physical parts you can touch), software (what gets executed) and peopleware (the people who create, use and maintain the system).
 
-Regarding software, we have to differenciate it whether it is : System software, application software or support software.
+Software can be classified as system software, application software or support (development) software.
 
-An algorithm, has to be : finite, ordered with a logical sequence of steps, and precise.
+An algorithm must be finite, ordered (a logical sequence of steps) and precise.
 
-Algorithms can be represented in : natural lenguage, pseudocode, and diagrams.
+Algorithms can be represented in natural language, pseudocode or diagrams.
 
-## Programming lenguages and their clasifications
+## Programming languages and their classification
 
-- We have to make a distintion between programming lenguages and computer lenguages.
-- We can also make distinctions by their level of abstraction, going from 1GL to 5GL, the most abstract.
-- Also by their purpose, which can be general or specific, like for example, R, which is specialized in statistics.
-- By their way of executing, whether it is compiled, interpreted or mixed/bytecode.
-- By the paradigm, which can be imperative or declarative.
-- By the place where the code is executed = front-end, back-end or full-stack.
+- Programming languages are a subset of computer languages; not every computer language is a programming language.
+- By level of abstraction: from 1GL to 5GL, 5GL being the most abstract.
+- By purpose: general-purpose or domain-specific (for example, R is specialized in statistics).
+- By how they are executed: compiled, interpreted or mixed (bytecode).
+- By paradigm: imperative or declarative.
+- By where the code runs: front-end, back-end or full-stack.
 
 ## Execution
 
-To go from source code to object code, we can go through compilers or interpreters.
-And, we also go through 4 phases (generally) : Source code creation, compilation of that source code to reach the object code, then we go through the linking process to handle libraries OR bytecode (if it´s Java), and finally, the execution process.
+To go from source code to object code we use compilers or interpreters.
 
-You can also virtualize either systems or processes through virtual machines.
+In general there are four phases: writing the source code, compiling it into object code, linking it with the required libraries (or generating bytecode, in the case of Java), and finally executing it.
 
-We can creat a multi-platform application by design, by virtual machines, through web or through adapted versiones of the application.
+Virtual machines can virtualize either full systems or single processes.
 
-Software can also be public (open source), so you can modify or even learn from the source code, or private, where you only have the executable, not the source code.
+A cross-platform application can be achieved by design, through virtual machines, through the web, or by building adapted versions of the application for each platform.
 
-## Stages in application development
+Software can be open source, where you can read, modify and learn from the source code, or proprietary, where you only get the executable and not the source code.
 
-Analisis, design, code, deployment, and mantainement.
+## Stages of application development
 
-## Development models and AGILE methodologies
+Analysis, design, coding, deployment and maintenance.
 
-- Waterfall method = Analisis, design, code, deployment, and mantainement (you first have to finish current phase, then advance onto the next one).
-- Prototyping = Initial idea, prototype, client validates, REAL development.
-- Iteration = Iteration 1, iteration 2, iteration 3, FINAL product.
-- Spiral = Cycles of : analysis, design, development, and evaluation.
+## Development models
 
-## Agile and SCRUM methodologies
+- Waterfall: analysis, design, coding, deployment and maintenance. Each phase must be finished before moving on to the next one.
+- Prototyping: initial idea, prototype, client validation, real development.
+- Iterative: iteration 1, iteration 2, iteration 3, final product.
+- Spiral: repeated cycles of analysis, design, development and evaluation.
 
-These are methodologies where the focus is on developing solutions in short cycles to then get feedback from stakeholders and the be able to quickly adapt efforts having in consideration stakeholder´s main concerns.
+## Agile and Scrum
 
-SCRUM methodology phases = Product backlog, sprint planning, daily SCRUM, sprint review, sprint backlog, and retrospective.
+Agile methodologies focus on building solutions in short cycles, getting feedback from stakeholders, and quickly adjusting the work to what matters most to them.
 
-Very important roles within SCRUM are = SCRUM master, product owner and, the development team.
+Scrum artifacts and events: product backlog, sprint planning, sprint backlog, daily scrum, sprint review and sprint retrospective.
+
+Key Scrum roles: Scrum Master, Product Owner and the development team.
