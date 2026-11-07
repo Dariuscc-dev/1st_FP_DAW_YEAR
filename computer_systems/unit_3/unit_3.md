@@ -2,7 +2,7 @@
 
 ## Overview & Contents
 - **Key Topic 1: Cases, Power Supplies, and Cooling:** Overview of physical computer components, form factors, power conversion stages, and cooling methods (air, liquid, mixed).
-- **Key Topic 2: Occupational Risk Prevention (PRL) & Safety Norms:** Workplace safety regulations, environmental conditions, ergonomic guidelines, electrical safety, fire protection, and mandatory safety signage.
+- **Key Topic 2: Occupational Health and Safety (OHS) & Safety Regulations:** Workplace safety regulations, environmental conditions, ergonomic guidelines, electrical safety, fire protection, and mandatory safety signage.
 - **Key Topic 3: Workshop Rules, Tools & Assembly Sequence:** Best practices for PC building (ESD protection, cable/component organization), necessary tools, step-by-step assembly procedure, and critical assembly precautions.
 - **Key Topic 4: Booting & Maintenance:** Types of maintenance (preventive, predictive, corrective), hardware/software diagnostic tools, and common troubleshooting steps using the KISS principle.
 - **Practical Examples & Common Pitfalls:** Pin damage during CPU placement, improper thermal paste application, RAM orientation/dual-channel issues, and basic cable connection oversights.
@@ -12,7 +12,7 @@
 Computer cases provide structural protection and organization for internal hardware components. They are typically constructed from steel, aluminum, or plastic, and contain external connectors, power buttons, and ventilation systems.
 
 - Core structural elements:
-  - **Chasis:** Internal metal framework where the motherboard and components are anchored.
+  - **Chassis:** Internal metal framework where the motherboard and components are anchored.
   - **Cover:** Outer shell of the case.
   - **Front Panel:** Contains power/reset buttons, status LEDs, audio jacks, and USB ports.
   - **Drive Bays:** Slots located at the front for housing storage drives and optical media.
@@ -23,31 +23,31 @@ Computer cases provide structural protection and organization for internal hardw
 ### Case Form Factors
 | Form Factor | Description | Typical Use Case |
 |---|---|---|
-| **ATX / Mid Tower (Semitorre)** | Standard vertical case layout | Desktop PCs, mainstream builds |
-| **Full Tower (Gran Torre)** | Large vertical case with extra expansion | High-end workstations, servers |
+| **ATX / Mid Tower** | Standard vertical case layout | Desktop PCs, mainstream builds |
+| **Full Tower** | Large vertical case with extra expansion | High-end workstations, servers |
 | **Mini-ITX / Slim / Cube** | Compact form factors for space saving | Small form factor (SFF) builds |
 | **HTPC** | Home Theatre PC enclosure | Living room media centers |
 
 ### Power Supplies (PSU)
 
-The power supply unit converts alternating current (**AC**) from the wall outlet into direct current (**CC**) required by internal components.
+The power supply unit converts alternating current (**AC**) from the wall outlet into direct current (**DC**) required by internal components.
 
 - Standard form factors:
-  - **ATX:** $150 \times 86 \times 140\text{ mm}$, standard desktop power delivery ($300\text{ W} - 2000\text{ W}$).
+  - **ATX:** 150 × 86 × 140 mm, standard desktop power delivery (300 W to 2000 W).
   - **SFX:** Compact power supply for Mini-ITX cases.
   - **EPS:** Server-grade power supply standard.
 - Core functions:
-  - **Current Conversion:** Converts AC to CC.
+  - **Current Conversion:** Converts AC to DC.
   - **Power Distribution:** Provides designated voltage rails to components.
   - **Electrical Protection:** Guards against overvoltage, short circuits, and overheating.
-  - **PFC (Power Factor Correction):** Active PFC achieves near $99\%$ power efficiency.
+  - **PFC (Power Factor Correction):** Active PFC achieves a power factor close to 99%.
 - Voltage output allocation:
   - **+12V Rail:** Supplies CPU, GPU, storage drives, and cooling fans.
   - **+5V Rail:** Power for USB ports and minor ICs.
   - **+3.3V Rail:** Powers RAM, motherboard chipsets, and expansion cards.
 - Conversion stages:
   1. **Transform:** Reduces incoming AC voltage.
-  2. **Rectify:** Converts AC to dual-wave CC using diodes.
+  2. **Rectify:** Converts AC to full-wave DC using diodes.
   3. **Filter:** Smooths out the electrical signal using capacitors.
   4. **Stabilize:** Regulates output voltage for steady power delivery.
 - Vital power connectors:
@@ -70,7 +70,7 @@ Thermal management prevents overheating, stops automatic safety shutdowns, avoid
 
 ---
 
-## Occupational Risk Prevention (PRL) & Safety Regulations
+## Occupational Health and Safety (OHS) & Safety Regulations
 
 Occupational safety regulations dictate rights and responsibilities designed to eliminate workplace accidents and reduce health hazards.
 
@@ -78,13 +78,13 @@ Occupational safety regulations dictate rights and responsibilities designed to 
   - **Falls, Impacts, and Cuts:** Maintain clean, ordered work areas. Keep walkways clear, organize trailing cables, use non-slip flooring, and store cutting tools safely. Tools must feature **CE Marking**.
   - **Crush Hazards:** Anchor tall cabinets and file racks to walls. Use single-drawer opening safety mechanisms.
 - Environmental and ergonomic requirements:
-  - **Temperature:** Maintain between $17^\circ\text{C}$ and $27^\circ\text{C}$.
-  - **Relative Humidity:** Maintain between $30\%$ and $70\%$.
-  - **Lighting & Noise:** Position light sources parallel to screens to limit glare. Keep ambient noise levels below $50\text{ dB(A)}$.
+  - **Temperature:** Maintain between 17 °C and 27 °C.
+  - **Relative Humidity:** Maintain between 30% and 70%.
+  - **Lighting & Noise:** Position light sources parallel to screens to limit glare. Keep ambient noise levels below 50 dB(A).
   - **Rest Breaks:** Change posture and take short breaks regularly; avoid remaining seated continuously for over 2 hours.
-  - **Ergonomics:** Position monitor $\sim 40\text{ cm}$ away with top edge at eye level. Use matte keyboards and contoured mice keeping wrists straight and elbows at $90^\circ$. Use an adjustable ergonomic chair and footrest if required.
+  - **Ergonomics:** Position the monitor about 40 cm away with top edge at eye level. Use matte keyboards and contoured mice keeping wrists straight and elbows at 90°. Use an adjustable ergonomic chair and footrest if required.
 - Electrical & fire safety:
-  - **Electrical Systems:** Use dedicated circuit breakers (**magnetotérmicos**), differential switches, and grounded lines inside locked enclosures. Avoid outlet splitters to prevent overloads.
+  - **Electrical Systems:** Use dedicated circuit breakers (**MCBs**), residual-current devices (RCDs), and grounded lines inside locked enclosures. Avoid outlet splitters to prevent overloads.
   - **Voltage Regulators:** Filter electrical signals to suppress voltage spikes.
   - **Fire Protection:** Maintain clear evacuation routes, functional fire detectors, alarms, hose reels, and inspected fire extinguishers.
 - Safety signage classifications:
@@ -110,19 +110,14 @@ Assembling a personal computer requires static control, structured component tra
   - Magnetic Phillips screwdriver (ensure correct sizing to prevent stripping screw heads).
   - Fine tweezers, magnifying glass, zip ties, and side-cutter pliers.
   - Cleaning supplies: compressed air canister, variable hand vacuum, isopropyl alcohol, soft brushes, and cotton swabs.
-  - Thermal calculation: Calculate total thermal power consumption (**TDP** = CPU + GPU + Drives) to select a PSU with headroom.
+  - Power calculation: Add up the power draw of the main components (CPU TDP + GPU + drives) to choose a PSU with enough headroom.
 
-### Step-by-Step Assembly Procedure 
-1. External Module Setup (Motherboard Prep)
-2. Install CPU ➔ Apply Thermal Paste ➔ Mount CPU Cooler ➔ Insert RAM Modules
-3. Internal Module Setup (Chassis Prep)
-4. Mount PSU in Case ➔ Secure Storage Drives (SSD/HDD) into Bays
-5. Integration Phase
-6. Mount Motherboard into Chassis using Metal Standoffs
-7. Expansion Phase
-8. Install Dedicated Graphics Card (GPU) into PCIe x16 Slot
-9. Wiring & Cabling
-10. Route and Connect Power Cables (24-pin ATX, 8-pin EPS) & Front Panel I/O
+### Step-by-Step Assembly Procedure
+1. **Motherboard prep (outside the case):** Install CPU → apply thermal paste → mount CPU cooler → insert RAM modules.
+2. **Case prep:** Mount the PSU → secure storage drives (SSD/HDD) in the bays.
+3. **Integration:** Mount the motherboard in the case using metal standoffs.
+4. **Expansion:** Install the dedicated graphics card (GPU) in the PCIe x16 slot.
+5. **Wiring:** Route and connect the power cables (24-pin ATX, 8-pin EPS) and the front panel I/O.
 
 - Assembly steps explained:
   1. **Chassis & Standoffs:** Install brass/metal standoffs into the chassis tray to prevent direct electrical contact between the motherboard back panel and the metal case.
@@ -132,7 +127,7 @@ Assembling a personal computer requires static control, structured component tra
   5. **Storage:** Install M.2 NVMe SSD into PCIe slot or mount 2.5"/3.5" SSD/HDD into drive bays. Connect SATA data lines to motherboard.
   6. **Front Panel Headers:** Connect `POWER SW`, `RESET SW`, `POWER LED`, `HDD LED`, USB, and HD Audio leads following motherboard pin diagram.
   7. **GPU Installation:** Remove expansion slot covers. Insert graphics card into top PCIe x16 slot, secure with chassis screws, and connect dedicated PCIe power cables.
-  8. **Power Supply Cabling:** Connect 24-pin EATX main connector, 4/8-pin EPS CPU cable, and SATA power connectors.
+  8. **Power Supply Cabling:** Connect the 24-pin ATX main connector, 4/8-pin EPS CPU cable, and SATA power connectors.
   9. **Open Bench Test:** Verify fan rotation, LED activity, and display output before closing outer panel.
 
 ### Critical Considerations
@@ -186,3 +181,4 @@ sudo smartctl -a /dev/sda
 
 # Monitor system thermals and fan speeds in real time
 sensors
+```
