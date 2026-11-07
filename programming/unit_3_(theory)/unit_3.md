@@ -61,7 +61,7 @@ Belongs to `java.util` and allows reading different data types.
 
 ```java
 import java.util.Scanner;
-Scanner teclado = new Scanner(System.in); 
+Scanner keyboard = new Scanner(System.in);
 ```
 
 ### Main Scanner Methods
@@ -76,19 +76,19 @@ Scanner teclado = new Scanner(System.in);
 When reading a number followed by a call to `nextLine()`, the `String` variable often ends up empty:
 
 ```java
-Scanner teclado = new Scanner(System.in);
-System.out.print("Edad: ");
-int edad = teclado.nextInt();
-System.out.print("Nombre completo: ");
-String nombre = teclado.nextLine(); // Remains empty!
+Scanner keyboard = new Scanner(System.in);
+System.out.print("Age: ");
+int age = keyboard.nextInt();
+System.out.print("Full name: ");
+String name = keyboard.nextLine(); // Remains empty!
 ```
 
 - **Reason:** `nextInt()` consumes the numeric value, but leaves the newline character (`\n` / Enter) pending in the buffer. `nextLine()` then reads this remaining newline character immediately.
 - **Solutions:**
-  1. **Extra `nextLine()`:** Add an extra `teclado.nextLine()` after reading the number to consume the pending newline.
+  1. **Extra `nextLine()`:** Add an extra `keyboard.nextLine()` after reading the number to consume the pending newline.
   2. **Read complete line and parse:** Read the line as a `String` and convert it:
      ```java
-     int edad = Integer.parseInt(teclado.nextLine());
+     int age = Integer.parseInt(keyboard.nextLine());
      ```
 
 ---
@@ -98,9 +98,9 @@ Instructions execute sequentially, one after another, in the order they appear.
 
 ```java
 {
-    instruccion_1;
-    instruccion_2;
-    instruccion_3;
+    instruction_1;
+    instruction_2;
+    instruction_3;
 }
 ```
 
@@ -110,9 +110,9 @@ Blocks are delimited using `{ }`. Keeping curly braces is recommended even for s
 ANSI escape sequences can be used to modify text colors in compatible terminals:
 
 ```java
-String rojo = "\033[31m";
+String red = "\033[31m";
 String reset = "\u001B[0m";
-System.out.println(rojo + "Texto rojo" + reset);
+System.out.println(red + "Red text" + reset);
 ```
 
 - **General Format:** `ESC [ brightness ; foregroundColor ; backgroundColor m`
@@ -128,7 +128,7 @@ Selection structures allow choosing which instructions to execute based on a boo
 ### Simple Selection (`if`)
 
 ```java
-if (condicion) {
+if (condition) {
     // Executes if condition is true
 }
 ```
@@ -136,7 +136,7 @@ if (condicion) {
 ### Double Selection (`if ... else`)
 
 ```java
-if (condicion) {
+if (condition) {
     // Executes if condition is true
 } else {
     // Executes if condition is false
@@ -147,24 +147,24 @@ if (condicion) {
 Expresses a decision with three operands and produces a result value:
 
 ```java
-condicion ? valorSiTrue : valorSiFalse
+condition ? valueIfTrue : valueIfFalse
 ```
 
 **Example:**
 ```java
-System.out.println(num % 2 == 0 ? "PAR" : "IMPAR");
+System.out.println(num % 2 == 0 ? "EVEN" : "ODD");
 ```
 
 ### Multiple Selection (`else if`)
 Evaluates conditions sequentially from top to bottom. Once a condition evaluates to `true`, its block executes and the remaining chain is skipped.
 
 ```java
-if (hora < 12) {
-    System.out.println("Buenos días");
-} else if (hora < 20) {
-    System.out.println("Buenas tardes");
+if (hour < 12) {
+    System.out.println("Good morning");
+} else if (hour < 20) {
+    System.out.println("Good afternoon");
 } else {
-    System.out.println("Buenas noches");
+    System.out.println("Good evening");
 }
 ```
 
@@ -172,11 +172,11 @@ if (hora < 12) {
 Evaluates an expression and branches execution to matching `case` labels.
 
 ```java
-switch (expresion) {
-    case valor1:
+switch (expression) {
+    case value1:
         // instructions
         break;
-    case valor2:
+    case value2:
         // instructions
         break;
     default:
@@ -206,14 +206,14 @@ Loops repeat a block of code while a condition is met or over a collection/range
 Evaluates the condition before executing the loop body. The block may run 0 or more times.
 
 ```java
-while (condicion) {
+while (condition) {
     // instructions
 }
 ```
 
 > **Important:** Always compare `String` content using `.equals()` instead of `!=` or `==`:
 > ```java
-> while (!cadena.equals("FIN")) { ... }
+> while (!text.equals("END")) { ... }
 > ```
 
 ### `do-while` Loop
@@ -222,14 +222,14 @@ Executes the loop body first, then checks the condition. The block is guaranteed
 ```java
 do {
     // instructions
-} while (condicion);
+} while (condition);
 ```
 
 ### `for` Loop
 Best suited when the exact number of iterations is known or controlled explicitly.
 
 ```java
-for (inicializacion; condicion; actualizacion) {
+for (initialization; condition; update) {
     // instructions
 }
 ```
@@ -242,16 +242,16 @@ for (inicializacion; condicion; actualizacion) {
 Iterates over elements in an array or collection without managing an explicit index.
 
 ```java
-for (Tipo elemento : coleccion) {
+for (Type element : collection) {
     // instructions
 }
 ```
 
 **Example:**
 ```java
-String[] nombres = {"Ana", "José", "Merxe"};
-for (String nombre : nombres) {
-    System.out.println(nombre);
+String[] names = {"Ana", "José", "Merxe"};
+for (String name : names) {
+    System.out.println(name);
 }
 ```
 
