@@ -203,3 +203,6 @@ Take the `STAFF` of a school, divided into the subtypes `PROFESSOR`, `JANITOR` a
 **ER diagram notation**
 
 From now on I use the look-across convention for (min,max) cardinalities: the cardinality is written next to the target entity. For example, "a book has one or more copies" is shown as (1,N) next to Copy, and "a copy belongs to exactly one book" as (1,1) next to Book. This is the usual convention in Chen notation, UML and crow's foot notation. Earlier diagrams in this repository may follow the opposite convention (look-here).
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/3aaa3523-89b3-4fd6-8a1a-e428b01dd2c8" />
+
