@@ -1,0 +1,31 @@
+<html lang= "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> More forms </title>
+</head>
+<body>
+<form>
+    <label for = "Gender"> Gender </label>
+        <select id ="Gender" name = "Gender">
+            <option value = "male"> Male </option>
+            <option value = "female"> Female </option>
+        </select>
+
+    <input list = "Genderr" name = "Gender" placeholder = "Select your gender">
+        <datalist id ="Genderr">
+            <option value = "male"> Male </option>
+            <option value = "female"> Female </option>
+        </datalist>
+
+    <label for = "Message" type = "textarea"> Message </label>
+        <textarea id = "Message" name = "Message" rows = "5" cols = "30" placeholder = "Write your message here"></textarea>
+
+    <button type = "submit"> Submit </button>
+    <button type = "reset"> Reset </button>
+    <button type = "button" onclick = "alert('You clicked the button')"> Click me </button>
+
+
+</form>
+</body> 
+</html>
