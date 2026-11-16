@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just to try</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Just to try</h1>
+
+    <p class="important">This is a simple paragraph.</p>
+    <!-- The class attribute is used to apply a specific CSS class to an HTML element. In this case, it applies the "important" class, which is defined in the styles.css file. This way, we can have alements that "dissobey" the predefined rules, in this case, specific to <p> elements -->
+
+    <!-- In the styles.css file, if we want the "important" class to only be applied to certain elements, instead of every element with the "important" class, we need to put "p.important", if we want to target only <p> elements with the "important" class-->
+
+    <aside>
+        <p>This is an aside element, which is used to represent content that is tangentially related to the content
+            around it. It can be used for sidebars, pull quotes, or other supplementary information.</p>
+    </aside>
+
+    <aside>
+        <p id="supplementary-info">This is an aside element, which is used to represent content that is tangentially
+            related to the content around it. It can be used for sidebars, pull quotes, or other supplementary
+            information.</p>
+    </aside>
+
+    <!-- The id attribute is used to assign a unique identifier to an HTML element. In this case, it assigns the id "supplementary-info" to the <p> element. This allows us to target this specific element in our CSS or JavaScript code. Class attribute can be used multiple times during the page, with ID attributes, each element can have only one ID as It is not recommended nor advised by google-->
+
+    <article>
+        <h2>Article Title</h2>
+        <!-- If we want to target only the <h2> element within the <article> element, we would use "article h2" in our CSS file. -->
+        <p>This is an article element, which is used to represent a self-contained composition in a document, page, or
+            application. It is typically used for blog posts, news articles, or other independent content.</p>
+        <!-- If we wan to target the direct son of the article, we use "article > p" -->
+        <div>
+            <p>This is a paragraph inside a div.</p>
+        </div>
+    </article>
+
+    <aside>
+        <p class="very_important">This is an aside element, which is used to represent content that is tangentially
+            related to the content around it. It can be used for sidebars, pull quotes, or other supplementary
+            information.</p>
+    </aside>
+
+    <aside>
+        <p class="important" class="very_important">This is an aside element, which is used to represent content that is
+            tangentially
+            related to the content around it. It can be used for sidebars, pull quotes, or other supplementary
+            information.</p>
+    </aside>
+
+</body>
+
+</html>
