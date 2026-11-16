@@ -1,0 +1,279 @@
+/* ==========================================================================
+   Anthropic / Claude Design System Stylesheet
+   Editorial, warm, minimalist aesthetic optimized for readability
+   ========================================================================== */
+
+:root {
+  /* --- Color Palette (Light Mode - Warm Parchment) --- */
+  --bg-primary: #FAF9F5;       /* Soft cream/paper main background */
+  --bg-secondary: #F0EEE6;     /* Cards, sidebars, and elevated containers */
+  --bg-tertiary: #E5E2D9;      /* Hover states for neutral elements and soft borders */
+  
+  --text-primary: #141413;     /* Deep charcoal ink (softer on the eyes than #000) */
+  --text-secondary: #5E5D59;   /* Subtitles, metadata, and supporting copy */
+  --text-muted: #87857F;       /* Placeholders and disabled text */
+
+  /* --- Brand Accents --- */
+  --accent-terracotta: #D97757;       /* Signature Anthropic terracotta orange */
+  --accent-terracotta-hover: #C26344; /* Accent hover state */
+  --accent-soft: rgba(217, 119, 87, 0.12); /* Subtle tint for badges or selections */
+
+  /* --- Borders & Dividers --- */
+  --border-light: #E2DFD7;
+  --border-medium: #CFCBC0;
+
+  /* --- Typography --- */
+  --font-serif: 'Georgia', 'Times New Roman', serif; /* Editorial headings */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif; /* UI & body */
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; /* Code */
+
+  /* --- Spacing & Border Radius --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+
+  /* --- Subtle Shadows --- */
+  --shadow-sm: 0 1px 2px rgba(20, 20, 19, 0.04);
+  --shadow-md: 0 4px 12px rgba(20, 20, 19, 0.06);
+}
+
+/* ==========================================================================
+   Dark Mode (Optional: add class="dark" to <body> or <html>)
+   ========================================================================== */
+.dark {
+  --bg-primary: #191918;
+  --bg-secondary: #222220;
+  --bg-tertiary: #2C2C2A;
+  
+  --text-primary: #F4F3EE;
+  --text-secondary: #A8A69E;
+  --text-muted: #73716B;
+
+  --border-light: #2E2E2B;
+  --border-medium: #3E3E3A;
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ==========================================================================
+   Editorial Typography
+   ========================================================================== */
+h1, h2, h3, .font-editorial {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.75rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-terracotta);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--accent-terracotta);
+}
+
+/* ==========================================================================
+   Containers & Layout
+   ========================================================================== */
+.container {
+  max-width: 820px; /* Optimal editorial reading width */
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.container-wide {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ==========================================================================
+   Components: Cards
+   ========================================================================== */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--border-medium);
+}
+
+/* ==========================================================================
+   Components: Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* Primary Button (Anthropic Terracotta) */
+.btn-primary {
+  background-color: var(--accent-terracotta);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-terracotta-hover);
+}
+
+/* Secondary Button (Dark Ink) */
+.btn-dark {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.btn-dark:hover {
+  opacity: 0.88;
+}
+
+/* Subtle / Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* ==========================================================================
+   Components: Inputs & Forms (Claude Prompt Box Style)
+   ========================================================================== */
+.input, .textarea {
+  width: 100%;
+  background-color: #FFFFFF;
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dark .input, .dark .textarea {
+  background-color: var(--bg-secondary);
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ==========================================================================
+   Components: Code Blocks & Badges
+   ========================================================================== */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background-color: var(--bg-secondary);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+}
+
+pre {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--accent-soft);
+  color: var(--accent-terracotta);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 2rem 0;
+}
+
+.important {
+  font-weight: 600;
+  color: var(--accent-terracotta);
+}
+
+#supplementary-info {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.very_important {
+  font-weight: 700;
+  color: var(--accent-terracotta);
+}
+
+.important .very_important {
+  font-weight: 1200;
+  color: var(--accent-terracotta-hover);
+}
