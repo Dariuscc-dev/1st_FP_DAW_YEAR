@@ -206,4 +206,5 @@ From now on I use the look-across convention for (min,max) cardinalities: the ca
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/3aaa3523-89b3-4fd6-8a1a-e428b01dd2c8" />
 
-<img width="1107" height="775" alt="image" src="https://github.com/user-attachments/assets/3dfa5f6b-9494-405d-8992-4e76a315d930" />
+<img width="1368" height="850" alt="image" src="https://github.com/user-attachments/assets/8fe4501b-2fdd-48c8-a824-1925349fc623" />
+
