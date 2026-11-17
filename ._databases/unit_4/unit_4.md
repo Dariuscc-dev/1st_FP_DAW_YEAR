@@ -473,3 +473,6 @@ The reflexive relationship is solved by propagating the student's own PK under a
 - [E/R to relational model, 1:N case](https://www.youtube.com/watch?v=uibk7H0gbmg)
 - [E/R to relational model, 1:1 case](https://www.youtube.com/watch?v=UY5b7rsbCFA)
 - [Full example: previous unit's E/R diagram passed to the relational model](https://www.youtube.com/watch?v=Bb5mWzVb4dM)
+
+## Case Studies
+
