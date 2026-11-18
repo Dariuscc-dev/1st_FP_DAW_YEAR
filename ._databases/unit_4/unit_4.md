@@ -476,3 +476,6 @@ The reflexive relationship is solved by propagating the student's own PK under a
 
 ## Case Studies
 
+<img width="1024" height="520" alt="image" src="https://github.com/user-attachments/assets/14b84b43-8e9a-4ed5-aa9a-9abd65171cc8" />
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/7a914056-a938-451f-b019-d6f2c0efed9d" />
