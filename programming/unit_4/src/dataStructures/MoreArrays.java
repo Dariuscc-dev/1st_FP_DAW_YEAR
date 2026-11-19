@@ -29,6 +29,25 @@ public class MoreArrays {
 			numbers2[i] = keyboard.nextInt();
 		}
 		
-	}
+		int sum = 0;
+		
+		for (int i=0; i < numbers1.length; i++) {
+		sum = sum + numbers1[i];
+		} // Total sum of all elements of the "numbers1" array.
+		
+		System.out.println(sum); 
+		
+		// For loop to find something specific inside an array and return a "true".
+		
+		int toFind = 5;
+		boolean found = false;
+		for (int i=0; i < numbers1.length; i++) {
+			if (numbers1[i] == toFind) {
+			found = true;
+			}
+		}
+		System.out.println(found); 
 
+	}
+	
 }
