@@ -20,7 +20,14 @@ public class Matrices {
 		System.out.println("Rows = " + rows); 
 		
 		System.out.println("Columns = " + columns); 
-        
-	}
+		
+		for (int row = 0; row < matrix.length; row++) {
+        for (int col = 0; col < matrix[row].length; col++) {
+        	System.out.print(matrix[row][col] + "\t");
+        	}
+        System.out.println();
+		}
 
+	}
+	
 }
