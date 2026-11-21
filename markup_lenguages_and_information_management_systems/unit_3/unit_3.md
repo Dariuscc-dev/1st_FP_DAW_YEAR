@@ -34,9 +34,9 @@ Simple example: a blog publishes posts, the feed summarizes them, and Feedly or 
 ### Linking a feed from an HTML page
 ```html
 <link rel="alternate" type="application/rss+xml"
-      title="Canal RSS" href="http://localhost/UD3/archivo.rss" />
+      title="RSS feed" href="http://localhost/UD3/feed.rss" />
 <link rel="alternate" type="application/atom+xml"
-      title="Canal Atom" href="http://localhost/UD3/archivo.atom" />
+      title="Atom feed" href="http://localhost/UD3/feed.atom" />
 ```
 
 | Attribute | Meaning |
@@ -140,7 +140,7 @@ This unit works with **RSS 2.0**.
 Then add a visible indicator on the page (RSS icon, XML or text), link it to the file, and register the feed in directories if needed.
 
 ```html
-<a href="caso_practico_3.rss">
+<a href="case_study_3.rss">
   <img src="rss.png" alt="RSS" width="80" height="35" />
 </a>
 ```
@@ -180,13 +180,13 @@ Then add a visible indicator on the page (RSS icon, XML or text), link it to the
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
   <channel>
-    <title>Ejemplo de canal</title>
+    <title>Sample feed</title>
     <link>http://localhost</link>
-    <description>Este es un archivo RSS</description>
+    <description>This is an RSS file</description>
     <item>
-      <title>Qué es el RSS</title>
-      <link>http://localhost/UD3/define_RSS.html</link>
-      <description>Define el estándar RSS</description>
+      <title>What RSS is</title>
+      <link>http://localhost/UD3/what_is_rss.html</link>
+      <description>Defines the RSS standard</description>
       <guid>http://localhost/UD3/01</guid>
     </item>
   </channel>
@@ -196,11 +196,11 @@ Then add a visible indicator on the page (RSS icon, XML or text), link it to the
 ### Image and copyright in RSS
 ```xml
 <image>
-  <url>http://localhost/UD3/imagenes/rss.png</url>
+  <url>http://localhost/UD3/images/rss.png</url>
   <link>http://localhost</link>
-  <title>Ejemplo de canal</title>
+  <title>Sample feed</title>
 </image>
-<copyright>© 2026 Mi sitio web</copyright>
+<copyright>© 2026 My website</copyright>
 ```
 
 `image` goes inside `channel` but outside any `item`. Its `title` and `link` must match the channel's `title` and `link`.
@@ -209,10 +209,10 @@ Then add a visible indicator on the page (RSS icon, XML or text), link it to the
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Ejemplo archivo Atom</title>
+  <title>Sample Atom file</title>
   <link href="http://localhost" />
   <updated>2021-10-13T18:30:02Z</updated>
-  <author><name>Profesor</name></author>
+  <author><name>Teacher</name></author>
   <id>urn:uuid:60a76c80-d399-11d9-b93C</id>
   <entry><!-- feed entry --></entry>
 </feed>
@@ -231,11 +231,11 @@ An `entry` has `title`, `id` (unique), `link` (`rel="alternate"`), `updated`, `a
 
 ```xml
 <entry>
-  <title>Ejemplo archivo Atom</title>
+  <title>Sample Atom file</title>
   <link href="http://localhost/2021/10/13/atom01" />
   <id>urn:uuid:1225c695-cfb8-4ebb-aaaa</id>
   <updated>2021-10-13T18:30:02Z</updated>
-  <summary>Simplemente un ejemplo de prueba.</summary>
+  <summary>Just a test example.</summary>
 </entry>
 ```
 
@@ -301,14 +301,14 @@ Other ways to distribute content: social networks, email, Google Alerts, influen
 | Recommended encoding | UTF-8 |
 
 ## Practice Exercises (solved)
-**1. Complete the RSS.** A channel "Blog DAW" has `title`, `link` and `description`. Add an entry.
+**1. Complete the RSS.** A feed "DAW Blog" has `title`, `link` and `description`. Add an entry.
 
 ```xml
 <item>
-  <title>Primera entrada</title>
-  <link>https://ejemplo.com/primera-entrada</link>
-  <description>Resumen de la entrada</description>
-  <guid>https://ejemplo.com/01</guid>
+  <title>First post</title>
+  <link>https://example.com/first-post</link>
+  <description>Post summary</description>
+  <guid>https://example.com/01</guid>
 </item>
 ```
 
@@ -318,8 +318,8 @@ It goes inside `<channel>`.
 
 ```xml
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Canal de prueba</title>
-  <item><title>Entrada 1</title></item>
+  <title>Test feed</title>
+  <item><title>Entry 1</title></item>
 </feed>
 ```
 
