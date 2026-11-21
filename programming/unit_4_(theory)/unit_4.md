@@ -49,7 +49,7 @@ int value = Integer.parseInt(data);       // 456
 
 - `toString()`: Converts the integer `123` into the string `"123"`.
 - `parseInt()`: Converts the numeric string `"456"` into the integer `456`.
-- **Typical error:** `Integer.parseInt("hola")` cannot produce an `int` and throws an exception (`NumberFormatException`).
+- **Typical error:** `Integer.parseInt("hello")` cannot produce an `int` and throws an exception (`NumberFormatException`).
 
 ### Character: analyzing characters
 - `Character.isDigit('2')`: Is it a digit? → `true`
@@ -187,7 +187,7 @@ System.out.println(f.format(today));
 
 > **Note:** In `SimpleDateFormat`, `MM` = month and `mm` = minutes.
 
-#### Date with the month name in Spanish
+#### Date with the month name in English
 
 ```java
 import java.text.SimpleDateFormat;
@@ -196,8 +196,8 @@ import java.util.Locale;
 
 Date today = new Date();
 SimpleDateFormat f = new SimpleDateFormat(
-    "dd 'de' MMMM 'de' yyyy",
-    new Locale("es", "ES"));
+    "d 'of' MMMM yyyy",
+    new Locale("en", "GB"));
 
 System.out.println(f.format(today));
 ```
@@ -206,7 +206,7 @@ System.out.println(f.format(today));
 - **Literal text:** Words between single quotes are printed as they are.
 - `Locale`: Sets the language/region used when formatting.
 
-> **Note:** The `Locale` constructor is deprecated since Java 19. In newer versions you can use `Locale.of("es", "ES")` instead.
+> **Note:** The `Locale` constructor is deprecated since Java 19. In newer versions you can use `Locale.of("en", "GB")` instead.
 
 ---
 
@@ -608,7 +608,7 @@ System.out.println("Sum = " + sum);
 ### Creating strings: null, empty and with content
 - **No value:** `String a;` → No content has been assigned. Depending on the context it can be `null` or uninitialized.
 - **Empty:** `String b = "";` → The string exists but contains 0 characters.
-- **With text:** `String c = "Hola";` → Contains 4 characters.
+- **With text:** `String c = "Hello";` → Contains 5 characters.
 
 > **Important:** `null` and `""` are not the same. An empty string is a valid `String` with length 0.
 
@@ -687,10 +687,10 @@ System.out.println(a.equalsIgnoreCase(b)); // true
 ### `length()` and `charAt()`
 
 ```java
-String s = "Hola mundo";
+String s = "Hello world";
 
-int length = s.length(); // 10
-char c = s.charAt(3);    // 'a'
+int length = s.length(); // 11
+char c = s.charAt(3);    // 'l'
 ```
 
 - `length()`: Returns the number of characters.
@@ -702,19 +702,19 @@ char c = s.charAt(3);    // 'a'
 
 | Index | 0 | 1 | 2 | 3 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Char** | H | O | L | A |
+| **Char** | J | A | V | A |
 
-- `"HOLA".charAt(0)` → `'H'`
-- `"HOLA".charAt(3)` → `'A'`
+- `"JAVA".charAt(0)` → `'J'`
+- `"JAVA".charAt(3)` → `'A'`
 
 > **Note:** The last valid position is `length() - 1`.
 
 ### `indexOf()`: locating text
 
 ```java
-String s = "Hola mundo";
+String s = "Hello world";
 
-int p1 = s.indexOf("mundo"); // 5
+int p1 = s.indexOf("world"); // 6
 int p2 = s.indexOf("Java");  // -1
 ```
 
@@ -725,28 +725,28 @@ int p2 = s.indexOf("Java");  // -1
 ### `substring()`: extracting a part
 
 ```java
-String s = "Hola mundo";
+String s = "Hello world";
 
-String a = s.substring(5);    // "mundo"
-String b = s.substring(5, 7); // "mu"
+String a = s.substring(6);    // "world"
+String b = s.substring(6, 8); // "wo"
 ```
 
-| Index | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Char** | H | o | l | a | ␠ | m | u | n | d | o |
+| Index | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Char** | H | e | l | l | o | ␠ | w | o | r | l | d |
 
-- `substring(5)`: From position 5 (`m`) to the end → `"mundo"`.
-- `substring(5, 7)`: Takes positions 5 and 6 → `"mu"`. Position 7 is left out.
+- `substring(6)`: From position 6 (`w`) to the end → `"world"`.
+- `substring(6, 8)`: Takes positions 6 and 7 → `"wo"`. Position 8 is left out.
 
 > **Rule:** Start included, end excluded.
 
 ### Uppercase and lowercase
 
 ```java
-String s = "Hola mundo";
+String s = "Hello world";
 
-String upper = s.toUpperCase(); // "HOLA MUNDO"
-String lower = s.toLowerCase(); // "hola mundo"
+String upper = s.toUpperCase(); // "HELLO WORLD"
+String lower = s.toLowerCase(); // "hello world"
 ```
 
 - `toUpperCase()`: Returns a new string in uppercase.
@@ -757,10 +757,10 @@ String lower = s.toLowerCase(); // "hola mundo"
 ### `trim()`: removing outer spaces
 
 ```java
-String s = "   Hola mundo   ";
+String s = "   Hello world   ";
 String clean = s.trim();
 
-System.out.println(clean); // "Hola mundo"
+System.out.println(clean); // "Hello world"
 ```
 
 - **Removes:** Spaces at the beginning and the end.
@@ -770,11 +770,11 @@ System.out.println(clean); // "Hola mundo"
 ### `split()`: splitting a string
 
 ```java
-String s = "Hola mundo";
+String s = "Hello world";
 String[] words = s.split(" ");
 
-System.out.println(words[0]); // Hola
-System.out.println(words[1]); // mundo
+System.out.println(words[0]); // Hello
+System.out.println(words[1]); // world
 ```
 
 - **Separator:** Here we use the space `" "`.
@@ -784,12 +784,12 @@ System.out.println(words[1]); // mundo
 ### `concat()`: joining strings
 
 ```java
-String s = "Hola ";
-String s2 = s.concat("mundo");
+String s = "Hello ";
+String s2 = s.concat("world");
 
-System.out.println(s2); // Hola mundo
+System.out.println(s2); // Hello world
 
-String s3 = s + "mundo"; // equivalent in this case
+String s3 = s + "world"; // equivalent in this case
 ```
 
 - `concat()`: Joins the original string with another one.
