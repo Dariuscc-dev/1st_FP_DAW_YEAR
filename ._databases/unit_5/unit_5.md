@@ -25,12 +25,12 @@
 
 The formal rules are the **normal forms**. There are six, plus Boyce-Codd. When a database passes the rules of the first, it is in 1NF; when it passes the second, it is in 2NF, and so on.
 
-| Normal form | Notation in class (Spanish) | Notation in these notes |
-|---|---|---|
-| First normal form | 1FN | 1NF |
-| Second normal form | 2FN | 2NF |
-| Third normal form | 3FN | 3NF |
-| Boyce-Codd normal form | FNBC | BCNF |
+| Normal form | Notation |
+|---|---|
+| First normal form | 1NF |
+| Second normal form | 2NF |
+| Third normal form | 3NF |
+| Boyce-Codd normal form | BCNF |
 
 In practice only the first three are usually applied: a database in **3NF** is considered correctly designed. Real-world cases don't always allow a perfect design, and normalizing adds tables. If the first three rules aren't met, the application using the database has to deal with redundant data and inconsistent dependencies itself.
 
@@ -41,7 +41,7 @@ Anomalies are database states that are not valid in the real world. Example: eac
 | Anomaly | What happens | Example |
 |---|---|---|
 | **Insertion** | You can't add data because other data is missing | `Group` doesn't allow nulls, so a new teacher without a group can't be inserted |
-| **Deletion** | Deleting some data unintentionally deletes other data | Group 1ºC is removed, and teacher José and the IT department disappear with it |
+| **Deletion** | Deleting some data unintentionally deletes other data | Group 1C is removed, and teacher José and the IT department disappear with it |
 | **Update** | Redundancy plus a partial update leaves inconsistent data | Alejandro's department is stored twice; if only one row is updated, the data is wrong |
 
 Normalization is what prevents these anomalies.
