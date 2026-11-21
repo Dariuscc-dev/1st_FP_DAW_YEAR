@@ -65,7 +65,7 @@ A key is a set of attributes that uniquely identifies each row. It can be **simp
 | Candidate key | A minimal superkey. A table can have several | NIA or DNI |
 | Primary key (PK) | The candidate key chosen by the designer. Only **one** per table | NIA |
 | Alternative key | Candidate keys that were not chosen as PK | DNI |
-| Foreign key (FK) | An attribute (or set) that is a candidate key in **another** table (or the same one). Used to link tables. FK and the referenced key must share the same domain | `NIA` inside `MATRICULAS` pointing to `ALUMNADO` |
+| Foreign key (FK) | An attribute (or set) that is a candidate key in **another** table (or the same one). Used to link tables. FK and the referenced key must share the same domain | `NIA` inside `ENROLMENTS` pointing to `STUDENTS` |
 
 ## Constraints
 
@@ -117,7 +117,7 @@ Markdown can't do dashed underlines, so in these notes I use:
 | <ins>*attr*</ins> | Part of the PK and also a FK |
 | `→ TABLE` | Table the FK references |
 
-Note: the textbook uses another notation (`#` in front of PK attributes and underline for FKs, e.g. `FUTBOLISTAS (#codigo, nombre, dorsal, equipo)`). Same idea, different symbols. In exams I follow the one the teacher uses in class (solid / dashed underline).
+Note: the textbook uses another notation (`#` in front of PK attributes and underline for FKs, e.g. `FOOTBALLERS (#code, name, shirt_number, team)`). Same idea, different symbols. In exams I follow the one the teacher uses in class (solid / dashed underline).
 
 ## Transforming entities
 
@@ -125,11 +125,11 @@ Note: the textbook uses another notation (`#` in front of PK attributes and unde
 
 Each entity becomes a table with the same name, and its attributes become columns.
 
-PERSONA (<ins>atributo1</ins>, atributo2, ..., atributoN)
+PERSON (<ins>attribute1</ins>, attribute2, ..., attributeN)
 
 Example from the textbook (strong entity):
 
-FUTBOLISTAS (<ins>codigo</ins>, nombre, dorsal, equipo)
+FOOTBALLERS (<ins>code</ins>, name, shirt_number, team)
 
 ## Transforming relationships (by cardinality)
 
@@ -143,17 +143,17 @@ Reminder about reading cardinalities: I use the look-across convention, so the (
 - Each of those attributes is part of the PK **and** a FK pointing to its original table.
 - If the relationship has attributes, they go into the new table. Sometimes one of them (usually a date) has to be part of the PK.
 
-Example: AUTOR (1,N) Escribe (0,N) LIBRO
+Example: AUTHOR (1,N) Writes (0,N) BOOK
 
-- AUTOR (<ins>cod_autor</ins>, ...)
-- LIBRO (<ins>cod_libro</ins>, ...)
-- ESCRIBE (<ins>*cod_autor*</ins>, <ins>*cod_libro*</ins>, ...) `cod_autor → AUTOR`, `cod_libro → LIBRO`
+- AUTHOR (<ins>author_code</ins>, ...)
+- BOOK (<ins>book_code</ins>, ...)
+- WRITES (<ins>*author_code*</ins>, <ins>*book_code*</ins>, ...) `author_code → AUTHOR`, `book_code → BOOK`
 
-Why not just add columns? If we put `modulo1, modulo2, modulo3` inside `ALUMNADO`, a student who signs up for a 4th module needs a new column, and students with fewer modules leave lots of nulls. Same problem the other way round. So N:M always gets its own table:
+Why not just add columns? If we put `module1, module2, module3` inside `STUDENTS`, a student who signs up for a 4th module needs a new column, and students with fewer modules leave lots of nulls. Same problem the other way round. So N:M always gets its own table:
 
-- ALUMNADO (<ins>NIA</ins>, nombre, apellidos)
-- MODULOS (<ins>codigo</ins>, nombre)
-- MATRICULAS (<ins>*NIA*</ins>, <ins>*codigo*</ins>, nota)
+- STUDENTS (<ins>NIA</ins>, name, surnames)
+- MODULES (<ins>code</ins>, name)
+- ENROLMENTS (<ins>*NIA*</ins>, <ins>*code*</ins>, grade)
 
 ### 1:N relationships → propagate or new table
 
@@ -169,20 +169,20 @@ How to decide: look at the (min,max) of the entity whose maximum is 1 (the "1" s
 | **(1,1)** | **Propagate** the PK from the "1" side to the "N" side as a FK. Relationship attributes also go to the "N" side |
 | **(0,1)** | **New table**. Its PK is the PK of the "N" side, and the PK of the "1" side is a FK. Relationship attributes go into this new table |
 
-Case (1,1): EMPLEADO (1,N) pertenece (1,1) DEPARTAMENTO. Every employee belongs to exactly one department.
+Case (1,1): EMPLOYEE (1,N) belongs_to (1,1) DEPARTMENT. Every employee belongs to exactly one department.
 
-- DEPARTAMENTO (<ins>NumDep</ins>, NomDep)
-- EMPLEADO (<ins>NumEmp</ins>, NomEmp, *NumDep*, Fechalta) `NumDep → DEPARTAMENTO`
+- DEPARTMENT (<ins>DeptNo</ins>, DeptName)
+- EMPLOYEE (<ins>EmpNo</ins>, EmpName, *DeptNo*, HireDate) `DeptNo → DEPARTMENT`
 
-`Fechalta` was an attribute of the relationship, so it travels with the key to EMPLEADO.
+`HireDate` was an attribute of the relationship, so it travels with the key to EMPLOYEE.
 
-Case (0,1): INMUEBLE (1,N) vendido (0,1) CLIENTE. A property may not be sold yet.
+Case (0,1): PROPERTY (1,N) sold_to (0,1) CUSTOMER. A property may not be sold yet.
 
-- INMUEBLE (<ins>NumIn</ins>, DirIn)
-- CLIENTE (<ins>Dni</ins>, NomCli)
-- VENTA (<ins>*NumIn*</ins>, *Dni*, Fechaventa) `NumIn → INMUEBLE`, `Dni → CLIENTE`
+- PROPERTY (<ins>PropNo</ins>, PropAddress)
+- CUSTOMER (<ins>Dni</ins>, CustName)
+- SALE (<ins>*PropNo*</ins>, *Dni*, SaleDate) `PropNo → PROPERTY`, `Dni → CUSTOMER`
 
-Why? If we propagated `Dni` into INMUEBLE, every unsold property would have `Dni = NULL`. The new table avoids those nulls.
+Why? If we propagated `Dni` into PROPERTY, every unsold property would have `Dni = NULL`. The new table avoids those nulls.
 
 Note: the textbook simplifies this and says 1:M always propagates the key to the "M" side. The class slides add the (0,1) nuance, which is what the teacher expects.
 
@@ -201,14 +201,14 @@ How to decide: look at the cardinalities of **both** entities.
 | **(0,1) and (1,1)** | **Propagate** from the entity with (1,1) to the entity with (0,1) |
 | **(1,1) and (1,1)** | **Propagate** in either direction. We choose |
 
-Example: EMPLEADO (1,1) Responsable (0,1) DEPARTAMENTO. Each department has exactly one employee in charge, and an employee may or may not be in charge of a department.
+Example: EMPLOYEE (1,1) Manages (0,1) DEPARTMENT. Each department has exactly one employee in charge, and an employee may or may not be in charge of a department.
 
-- EMPLEADO (<ins>Cod_E</ins>, ...)
-- DEPARTAMENTO (<ins>Cod_D</ins>, ..., *Cod_E*) `Cod_E → EMPLEADO`
+- EMPLOYEE (<ins>Emp_Code</ins>, ...)
+- DEPARTMENT (<ins>Dept_Code</ins>, ..., *Emp_Code*) `Emp_Code → EMPLOYEE`
 
-`Cod_E` in DEPARTAMENTO: nulls not allowed, it's an alternative key (`UNIQUE`), delete restricted and update in cascade.
+`Emp_Code` in DEPARTMENT: nulls not allowed, it's an alternative key (`UNIQUE`), delete restricted and update in cascade.
 
-Textbook example (PROFESORADO / DEPARTAMENTOS, the department head): if we put `id_dpt` in PROFESORADO, only one teacher row would have a value. The right move is putting the head teacher's id (`Jefe_dpt`) in DEPARTAMENTOS as a FK.
+Textbook example (TEACHERS / DEPARTMENTS, the department head): if we put `dept_id` in TEACHERS, only one teacher row would have a value. The right move is putting the head teacher's id (`Dept_head`) in DEPARTMENTS as a FK.
 
 ### Summary 1:N
 
@@ -231,36 +231,36 @@ Textbook example (PROFESORADO / DEPARTAMENTOS, the department head): if we put `
 
 Same rules as before, but both sides are the **same entity**. The FK is the same PK repeated with a different name.
 
-Example: DEPARTAMENTO (0,N) depende de (0,1) DEPARTAMENTO, N:1. A department depends on at most one higher department.
+Example: DEPARTMENT (0,N) depends_on (0,1) DEPARTMENT, N:1. A department depends on at most one higher department.
 
 Solution A, new table (no nulls):
 
-- DEPARTAMENTO (<ins>numdepto</ins>, nombre, tel)
-- DEPENDE (<ins>*numdepto*</ins>, *numdepto_sup*) both `→ DEPARTAMENTO`
+- DEPARTMENT (<ins>dept_no</ins>, name, phone)
+- DEPENDS (<ins>*dept_no*</ins>, *parent_dept_no*) both `→ DEPARTMENT`
 
 Solution B, propagate (one null allowed, the head office department that depends on nobody, but we save a table):
 
-- DEPARTAMENTO (<ins>numdepto</ins>, nombre, tel, *numdepto_sup*) `numdepto_sup → DEPARTAMENTO`
+- DEPARTMENT (<ins>dept_no</ins>, name, phone, *parent_dept_no*) `parent_dept_no → DEPARTMENT`
 
 Textbook example 1:M (an employee has one boss):
 
-- EMPLEADOS (<ins>DNI</ins>, Nombre, *DNIJefe*) `DNIJefe → EMPLEADOS`
+- EMPLOYEES (<ins>DNI</ins>, Name, *BossDNI*) `BossDNI → EMPLOYEES`
 
 Textbook example M:M (an employee can have several bosses): new table with the PK repeated twice.
 
-- EMPLEADOS (<ins>DNI</ins>, Nombre)
-- JEFES (<ins>*DNI_empleado*</ins>, <ins>*DNI_jefe*</ins>) both `→ EMPLEADOS`
+- EMPLOYEES (<ins>DNI</ins>, Name)
+- BOSSES (<ins>*Employee_DNI*</ins>, <ins>*Boss_DNI*</ins>) both `→ EMPLOYEES`
 
 ### Ternary relationships (degree 3)
 
 Treated like N:M: a new table whose PK is the combination of the PKs of the three entities, plus the relationship attributes.
 
-Example: ASIGNATURA, ALUMNO and CONVOCATORIA related through `matriculado` (M:N:P), with attribute `calif`.
+Example: SUBJECT, STUDENT and EXAM_SESSION related through `enrolled` (M:N:P), with attribute `grade`.
 
-- ASIGNATURA (<ins>codasig</ins>, nomasig)
-- ALUMNO (<ins>numat</ins>, nomalu)
-- CONVOCATORIA (<ins>codconv</ins>, desconv, fechaconv)
-- MATRICULA (<ins>*codasig*</ins>, <ins>*numat*</ins>, <ins>*codconv*</ins>, calif)
+- SUBJECT (<ins>subject_code</ins>, subject_name)
+- STUDENT (<ins>student_no</ins>, student_name)
+- EXAM_SESSION (<ins>session_code</ins>, session_desc, session_date)
+- ENROLMENT (<ins>*subject_code*</ins>, <ins>*student_no*</ins>, <ins>*session_code*</ins>, grade)
 
 ## Transforming attributes
 
@@ -276,12 +276,12 @@ General rule: each attribute becomes a column of the table created from its enti
 | Derived (calculated) | Removed from the table, unless you can justify keeping it |
 | Multi-valued | Creates a **new table** with the attribute + the PK of the entity (which is also a FK). The PK of the new table is made of **all** its attributes |
 
-Example: CLIENTE with `Codigo` (PK), `Dni` (alternative key), `Nombre`, composite `Direc` (Calle, Numero, D_postal, Poblac, Prov), multi-valued `Telef` and derived `Saldo`.
+Example: CUSTOMER with `Code` (PK), `Dni` (alternative key), `Name`, composite `Address` (Street, Number, Postcode, Town, Province), multi-valued `Phone` and derived `Balance`.
 
-- CLIENTE (<ins>Codigo</ins>, Dni, Nombre, Calle, Numero, D_Postal, Poblac, Prov)
-- TELEFONO (<ins>*Codigo*</ins>, <ins>Telef</ins>) `Codigo → CLIENTE`
+- CUSTOMER (<ins>Code</ins>, Dni, Name, Street, Number, Postcode, Town, Province)
+- PHONE (<ins>*Code*</ins>, <ins>Phone</ins>) `Code → CUSTOMER`
 
-`Direc` is split into its parts, `Telef` gets its own table, and `Saldo` is dropped because it can be calculated.
+`Address` is split into its parts, `Phone` gets its own table, and `Balance` is dropped because it can be calculated.
 
 ### Relationship attributes
 
@@ -289,14 +289,14 @@ Example: CLIENTE with `Codigo` (PK), `Dni` (alternative key), `Nombre`, composit
 - If the relationship is transformed by key propagation, its attributes travel with the key to the same table.
 - Sometimes a relationship attribute, usually a **date**, has to be part of the PK.
 
-Example: CLIENTE (1,N) alquilado (0,N) VEHICULO, N:M, with `fechaalq` and `fechadev`. And VEHICULO (0,N) censado (1,1) MUNICIPIO, N:1, with `fechacenso`.
+Example: CUSTOMER (1,N) rents (0,N) VEHICLE, N:M, with `rental_date` and `return_date`. And VEHICLE (0,N) registered_in (1,1) TOWN, N:1, with `registration_date`.
 
-- CLIENTE (<ins>dnicli</ins>, nomcli, telcli)
-- ALQUILER (<ins>*dnicli*</ins>, <ins>*matricula*</ins>, <ins>fechaalq</ins>, fechadev)
-- VEHICULO (<ins>matricula</ins>, fechamat, *codmun*, fechacenso) `codmun → MUNICIPIO`
-- MUNICIPIO (<ins>codmun</ins>, nommun)
+- CUSTOMER (<ins>cust_dni</ins>, cust_name, cust_phone)
+- RENTAL (<ins>*cust_dni*</ins>, <ins>*plate*</ins>, <ins>rental_date</ins>, return_date)
+- VEHICLE (<ins>plate</ins>, plate_date, *town_code*, registration_date) `town_code → TOWN`
+- TOWN (<ins>town_code</ins>, town_name)
 
-`fechaalq` is part of the PK because the same client can rent the same car on different dates. Without it, the second rental would duplicate the PK.
+`rental_date` is part of the PK because the same customer can rent the same car on different dates. Without it, the second rental would duplicate the PK.
 
 ## Weak entities
 
@@ -307,53 +307,53 @@ A weak entity depends on a strong one. How we transform it depends on the type o
 | **Existence** | Only its own key attributes. Nothing is added to the PK (the strong entity's key goes in as a normal FK) |
 | **Identification** | Its own key attributes **plus** the PK of the strong entity, which is also a FK |
 
-Identification example: HOTEL (1,1) posee (1,N) HABITACION. Room number 101 exists in many hotels, so we need the hotel code to identify a room.
+Identification example: HOTEL (1,1) has (1,N) ROOM. Room number 101 exists in many hotels, so we need the hotel code to identify a room.
 
-- HOTEL (<ins>cod</ins>, nombre, dir, tel)
-- HABITACION (<ins>*cod*</ins>, <ins>numhab</ins>, tipo, precio) `cod → HOTEL`
+- HOTEL (<ins>code</ins>, name, address, phone)
+- ROOM (<ins>*code*</ins>, <ins>room_no</ins>, type, price) `code → HOTEL`
 
-Existence example (textbook): FACTURA depends on CLIENTE. An invoice can't exist without its client, and if the client is deleted the invoice goes too. But the invoice number identifies the invoice by itself, so the client's key is not added to the PK.
+Existence example (textbook): INVOICE depends on CUSTOMER. An invoice can't exist without its customer, and if the customer is deleted the invoice goes too. But the invoice number identifies the invoice by itself, so the customer's key is not added to the PK.
 
 ## Generalization / specialization
 
-Example: PUERTO (Codigo, Nombre, Ciudad) with subtypes COMERCIAL (Calado) and DEPORTIVO (Amarres).
+Example: PORT (Code, Name, City) with subtypes COMMERCIAL (Draft) and MARINA (Moorings).
 
 | Option | What we do | When it fits |
 |---|---|---|
-| **A. One single table** | One table for the supertype with all attributes of all subtypes. If subtypes don't have distinct attributes, add a `tipo` column | Subtypes differ in very few attributes and have the same relationships (or none). Downside: nulls in the subtype-specific columns |
+| **A. One single table** | One table for the supertype with all attributes of all subtypes. If subtypes don't have distinct attributes, add a `type` column | Subtypes differ in very few attributes and have the same relationships (or none). Downside: nulls in the subtype-specific columns |
 | **B. Supertype table + one table per subtype** | Each with its own attributes. Subtypes take the supertype's PK as PK and FK | Subtypes have different attributes and/or different relationships. Keeps common attributes together |
 | **C. One table per subtype only** | Each subtype table includes its own attributes plus all the supertype's attributes. No supertype table | Total and exclusive hierarchies |
 
 Option A:
 
-- PUERTO (<ins>Codigo</ins>, Nombre, Ciudad, Calado, Amarres)
+- PORT (<ins>Code</ins>, Name, City, Draft, Moorings)
 
 Option B:
 
-- PUERTO (<ins>Codigo</ins>, Nombre, Ciudad)
-- COMERCIAL (<ins>*Codigo*</ins>, Calado) `Codigo → PUERTO`
-- DEPORTIVO (<ins>*Codigo*</ins>, Amarres) `Codigo → PUERTO`
+- PORT (<ins>Code</ins>, Name, City)
+- COMMERCIAL (<ins>*Code*</ins>, Draft) `Code → PORT`
+- MARINA (<ins>*Code*</ins>, Moorings) `Code → PORT`
 
 Option C:
 
-- COMERCIAL (<ins>Codigo</ins>, Nombre, Ciudad, Calado)
-- DEPORTIVO (<ins>Codigo</ins>, Nombre, Ciudad, Amarres)
+- COMMERCIAL (<ins>Code</ins>, Name, City, Draft)
+- MARINA (<ins>Code</ins>, Name, City, Moorings)
 
-The textbook adds a 4th option: one single table like option A, but instead of a `tipo` column it adds boolean flags for each profile. Useful for **overlapping** hierarchies (one row can be several subtypes at once):
+The textbook adds a 4th option: one single table like option A, but instead of a `type` column it adds boolean flags for each profile. Useful for **overlapping** hierarchies (one row can be several subtypes at once):
 
-- FUTBOLISTAS (<ins>codigo</ins>, nombre, dorsal, equipo, golesEncajados, golesMarcados, esPortero, esDeCampo)
+- FOOTBALLERS (<ins>code</ins>, name, shirt_number, team, goalsConceded, goalsScored, isGoalkeeper, isOutfield)
 
 ## Aggregations
 
 No special rule. Aggregations are solved with the same principles as everything else. The aggregated relationship becomes a table, and that table's PK is what the outer relationship uses.
 
-Example (textbook): CENTROS offer CICLOS (aggregation OFERTAS), and ALUMNADO enrols in an offer.
+Example (textbook): SCHOOLS offer COURSES (aggregation OFFERS), and STUDENTS enrol in an offer.
 
-- CENTROS (<ins>codigoCentro</ins>, nombre, ciudad)
-- CICLOS (<ins>idCiclo</ins>, nombre, familia)
-- OFERTAS (<ins>*codigoCentro*</ins>, <ins>*idCiclo*</ins>, plazas)
-- ALUMNADO (<ins>NIA</ins>, nombre, apellidos)
-- MATRICULAS (<ins>*NIA*</ins>, <ins>*codigoCentro*</ins>, <ins>*idCiclo*</ins>, fecha, convocatorias)
+- SCHOOLS (<ins>schoolCode</ins>, name, city)
+- COURSES (<ins>courseId</ins>, name, family)
+- OFFERS (<ins>*schoolCode*</ins>, <ins>*courseId*</ins>, places)
+- STUDENTS (<ins>NIA</ins>, name, surnames)
+- ENROLMENTS (<ins>*NIA*</ins>, <ins>*schoolCode*</ins>, <ins>*courseId*</ins>, date, attempts)
 
 ## Cheat sheet
 
@@ -389,83 +389,83 @@ Is it 1:1?            → both (0,1)?             yes → new table
 
 Solutions as given in class.
 
-### Exercise 1: Shipping company (Naviera)
+### Exercise 1: Shipping company
 
-BARCO (numbarco, nombre, feconst, eslora) with exclusive subtypes CARGA (tm, vol, m2) and CRUCERO (pl, tp). A cruise ship has (1,N) cabins, CAMAROTE (numcam, plazas, precio), which is a weak entity by identification.
+SHIP (ship_no, name, build_date, length) with exclusive subtypes CARGO (tonnage, volume, m2) and CRUISE (passengers, crew). A cruise ship has (1,N) cabins, CABIN (cabin_no, berths, price), which is a weak entity by identification.
 
-The hierarchy is solved with option C (one table per subtype), and CAMAROTE takes the ship's PK as part of its own:
+The hierarchy is solved with option C (one table per subtype), and CABIN takes the ship's PK as part of its own:
 
-- CARGA (<ins>numbarco</ins>, nombre, feconst, eslora, tm, vol, m2)
-- CRUCERO (<ins>numbarco</ins>, nombre, feconst, eslora, pl, tp)
-- CAMAROTE (<ins>*numbarco*</ins>, <ins>numcam</ins>, plazas, precio) `numbarco → CRUCERO`
+- CARGO (<ins>ship_no</ins>, name, build_date, length, tonnage, volume, m2)
+- CRUISE (<ins>ship_no</ins>, name, build_date, length, passengers, crew)
+- CABIN (<ins>*ship_no*</ins>, <ins>cabin_no</ins>, berths, price) `ship_no → CRUISE`
 
 ### Exercise 2: Suppliers, products and customers
 
-- Proveedor (CIF, Nombre, Direccion) (1,1) Suministra (1,N) Producto (Codigo, Nombre, Precio). 1:N
-- Cliente (DNI, Nombre, Apellidos, Direccion, Fecha de nacimiento) (0,N) Se vende (1,N) Producto. N:M
+- Supplier (CIF, Name, Address) (1,1) Supplies (1,N) Product (Code, Name, Price). 1:N
+- Customer (DNI, Name, Surnames, Address, Date_of_birth) (0,N) Is_sold (1,N) Product. N:M
 
 Solution:
 
-- CLIENTE (<ins>DNI</ins>, nombre, direccion, fecha_de_nacimiento)
-- PRODUCTOS (<ins>Codigo</ins>, precio, nombre, *CIF_proveedor*) `CIF_proveedor → PROVEEDOR`
-- SE_VENDE (<ins>*DNI_cliente*</ins>, <ins>*Codigo_producto*</ins>) `→ CLIENTE`, `→ PRODUCTOS`
-- PROVEEDOR (<ins>CIF</ins>, nombre, direccion)
+- CUSTOMER (<ins>DNI</ins>, name, address, date_of_birth)
+- PRODUCTS (<ins>Code</ins>, price, name, *Supplier_CIF*) `Supplier_CIF → SUPPLIER`
+- IS_SOLD (<ins>*Customer_DNI*</ins>, <ins>*Product_code*</ins>) `→ CUSTOMER`, `→ PRODUCTS`
+- SUPPLIER (<ins>CIF</ins>, name, address)
 
-Note: the class solution writes `NIF` in PROVEEDOR, but the diagram uses `CIF`. I kept CIF so the FK matches.
+Note: the class solution writes `NIF` in SUPPLIER, but the diagram uses `CIF`. I kept CIF so the FK matches.
 
 ### Exercise 3: Trucks and parcels
 
-- CAMIONERO drives CAMION. N:M
-- CAMIONERO delivers PAQUETE. 1:N
-- PAQUETE goes to PROVINCIA. N:1
+- DRIVER drives TRUCK. N:M
+- DRIVER delivers PARCEL. 1:N
+- PARCEL goes to PROVINCE. N:1
 
 Solution:
 
-- CAMION (<ins>Matricula</ins>, modelo, tipo, potencia)
-- CONDUCE (<ins>*Matricula_camion*</ins>, <ins>*DNI_camionero*</ins>) `→ CAMION`, `→ CAMIONERO`
-- CAMIONERO (<ins>DNI</ins>, nombre, direccion, telefono, salario, poblacion)
-- PAQUETE (<ins>Codigo</ins>, destinatario, descripcion, direccion, *DNI_camionero*, *codigo_provincia*) `→ CAMIONERO`, `→ PROVINCIA`
-- PROVINCIA (<ins>Codigo</ins>, nombre)
+- TRUCK (<ins>Plate</ins>, model, type, power)
+- DRIVES (<ins>*Truck_plate*</ins>, <ins>*Driver_DNI*</ins>) `→ TRUCK`, `→ DRIVER`
+- DRIVER (<ins>DNI</ins>, name, address, phone, salary, town)
+- PARCEL (<ins>Code</ins>, recipient, description, address, *Driver_DNI*, *Province_code*) `→ DRIVER`, `→ PROVINCE`
+- PROVINCE (<ins>Code</ins>, name)
 
 ### Exercise 4: Library
 
-- Autor (Codigo_Autor, Nombre_Completo [Nombre, Apellido_1, Apellido_2]) (1,N) Escribe (1,N) Libro (Codigo_Libro, ISBN, Titulo, Editorial, Numero_Paginas). N:M
-- Libro (1,1) Tiene (1,N) Ejemplar (Codigo_Ejemplar, Localizacion). 1:N, Ejemplar is a weak entity by identification
-- Ejemplar (1,N) Es_Prestado (1,N) Usuario, with Fecha_Prestamo and Fecha_Devolucion. N:M
-- Usuario (Codigo_Usuario, Nombre_Completo [...], Direccion [Via, Numero, CP, Poblacion], Telefono multi-valued)
+- Author (Author_Code, Full_Name [Name, Surname_1, Surname_2]) (1,N) Writes (1,N) Book (Book_Code, ISBN, Title, Publisher, Page_Count). N:M
+- Book (1,1) Has (1,N) Copy (Copy_Code, Location). 1:N, Copy is a weak entity by identification
+- Copy (1,N) Is_Lent (1,N) User, with Loan_Date and Return_Date. N:M
+- User (User_Code, Full_Name [...], Address [Street, Number, Postcode, Town], Phone multi-valued)
 
 Solution:
 
-- AUTOR (<ins>cod_autor</ins>, nombre, apellido1, apellido2)
-- ESCRIBE (<ins>*cod_libro*</ins>, <ins>*cod_autor*</ins>)
-- LIBRO (<ins>cod_libro</ins>, ISBN, titulo, editorial, num_pag)
-- EJEMPLAR (<ins>*cod_libro*</ins>, <ins>cod_ejemplar</ins>, localizacion)
-- PRESTADO (<ins>*cod_libro*</ins>, <ins>*cod_ejem*</ins>, <ins>*cod_usu*</ins>, <ins>fec_pres</ins>, fec_dev)
-- USUARIO (<ins>cod_usu</ins>, nom, apell1, apell2, via, num, pob, cp)
-- TELEFONO (<ins>*cod_usu*</ins>, <ins>telefono</ins>)
+- AUTHOR (<ins>author_code</ins>, name, surname1, surname2)
+- WRITES (<ins>*book_code*</ins>, <ins>*author_code*</ins>)
+- BOOK (<ins>book_code</ins>, ISBN, title, publisher, page_count)
+- COPY (<ins>*book_code*</ins>, <ins>copy_code</ins>, location)
+- LOAN (<ins>*book_code*</ins>, <ins>*copy_code*</ins>, <ins>*user_code*</ins>, <ins>loan_date</ins>, return_date)
+- USER (<ins>user_code</ins>, name, surname1, surname2, street, number, town, postcode)
+- PHONE (<ins>*user_code*</ins>, <ins>phone</ins>)
 
 What to notice:
 
-- Composite attributes (`Nombre_Completo`, `Direccion`) are split into columns.
-- The multi-valued `Telefono` gets its own table.
-- `EJEMPLAR` includes `cod_libro` in its PK (identification dependency).
-- In `PRESTADO`, the FK to `EJEMPLAR` is composite (`cod_libro`, `cod_ejem`), and `fec_pres` is part of the PK because the same user can borrow the same copy more than once.
+- Composite attributes (`Full_Name`, `Address`) are split into columns.
+- The multi-valued `Phone` gets its own table.
+- `COPY` includes `book_code` in its PK (identification dependency).
+- In `LOAN`, the FK to `COPY` is composite (`book_code`, `copy_code`), and `loan_date` is part of the PK because the same user can borrow the same copy more than once.
 
 ### Exercise 5: Teachers, modules and students
 
-- Profesores (DNI, Nombre_Completo, Direccion [Calle, Numero, Localidad, Provincia], Telefono multi-valued) (1,1) Imparten (1,N) Modulos (Codigo, Nombre). 1:N
-- Modulos (1,N) Matriculan (1,N) Alumno (N_Expediente, Nombre, Apellidos [Apellido_1, Apellido_2], Fecha_de_nacimiento). N:M
-- Alumno represents Alumno, reflexive (1,1) / (1,N)
+- Teachers (DNI, Full_Name, Address [Street, Number, Town, Province], Phone multi-valued) (1,1) Teach (1,N) Modules (Code, Name). 1:N
+- Modules (1,N) Enrol (1,N) Student (Record_No, Name, Surnames [Surname_1, Surname_2], Date_of_birth). N:M
+- Student represents Student, reflexive (1,1) / (1,N)
 
 Solution:
 
-- PROFESORES (<ins>DNI</ins>, nombre, apellido1, apellido2, calle, localidad, provincia, numero)
-- TELEFONO (<ins>*DNI*</ins>, <ins>Telefono</ins>) `→ PROFESORES`
-- MODULO (<ins>Codigo</ins>, nombre, *DNI_profesor*) `→ PROFESORES`
-- MATRICULACION (<ins>*Codigo_modulo*</ins>, <ins>*N_expediente*</ins>) `→ MODULO`, `→ ALUMNO`
-- ALUMNO (<ins>N_expediente</ins>, nombre, apellido1, apellido2, fec_nac, *N_expediente_repre*) `→ ALUMNO`
+- TEACHERS (<ins>DNI</ins>, name, surname1, surname2, street, town, province, number)
+- PHONE (<ins>*DNI*</ins>, <ins>Phone</ins>) `→ TEACHERS`
+- MODULE (<ins>Code</ins>, name, *Teacher_DNI*) `→ TEACHERS`
+- ENROLMENT (<ins>*Module_code*</ins>, <ins>*Record_no*</ins>) `→ MODULE`, `→ STUDENT`
+- STUDENT (<ins>Record_no</ins>, name, surname1, surname2, birth_date, *Rep_record_no*) `→ STUDENT`
 
-The reflexive relationship is solved by propagating the student's own PK under a new name (`N_expediente_repre`).
+The reflexive relationship is solved by propagating the student's own PK under a new name (`Rep_record_no`).
 
 ## Video tutorials (from class)
 
