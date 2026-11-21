@@ -61,7 +61,7 @@ Golden rule: **commit saves to your local repository. Push sends to the remote r
 | **Repository** | `.git` | Confirmed history made of commits |
 
 ```bash
-git add Archivo.java          # moves changes to the staging area
+git add MyFile.java          # moves changes to the staging area
 git commit -m "Add form validation"   # confirms them in the repository
 ```
 
@@ -107,8 +107,8 @@ A branch is an alternative line of work that does not break the main line (`main
 Use a branch when the change will take several commits, you are not sure the new code will work, you want to fix a bug without mixing it with other tasks, or you need to keep the main branch stable.
 
 ```bash
-git branch pruebas
-git checkout pruebas    # or: git switch pruebas
+git branch testing
+git checkout testing    # or: git switch testing
 ```
 
 A branch is not a manual copy of a folder. Switching branches changes the working directory. Merging integrates the changes of one branch into another.
@@ -150,8 +150,8 @@ src/
 └── com/
     └── mgh/
         └── edd/
-            ├── Hola.java     (contains main)
-            └── Saluda.java   (helper logic)
+            ├── Hello.java     (contains main)
+            └── Greeter.java   (helper logic)
 ```
 
 The package name must match the folder structure (`com.mgh.edd` → `com/mgh/edd`).
@@ -159,17 +159,17 @@ The package name must match the folder structure (`com.mgh.edd` → `com/mgh/edd
 ```java
 package com.mgh.edd;
 
-public class Saluda {
-    public static void saluda(String nombre) {
-        System.out.println("Hola " + nombre);
+public class Greeter {
+    public static void greet(String name) {
+        System.out.println("Hello " + name);
     }
 }
 ```
 
 ```bash
-javac com/mgh/edd/Saluda.java
-javac com/mgh/edd/Hola.java
-java com.mgh.edd.Hola Jose     # prints: Hola Jose
+javac com/mgh/edd/Greeter.java
+javac com/mgh/edd/Hello.java
+java com.mgh.edd.Hello Jose     # prints: Hello Jose
 ```
 
 `javac` compiles to bytecode (`.class`). `java` runs the class using its fully qualified name.
@@ -178,7 +178,7 @@ java com.mgh.edd.Hola Jose     # prints: Hola Jose
 Java library to automate builds, configured with an XML file called **`build.xml`**. The key concept is the **target**: a build task that can depend on other targets through `depends`.
 
 ```xml
-<project name="saludaAnt">
+<project name="greetAnt">
   <target name="clean">
     <delete dir="classes" />
   </target>
@@ -190,7 +190,7 @@ Java library to automate builds, configured with an XML file called **`build.xml
 
   <target name="run" depends="compile">
     <property name="arg0" value="" />
-    <java classpath="classes" classname="com.mgh.edd.Hola">
+    <java classpath="classes" classname="com.mgh.edd.Hello">
       <arg value="${arg0}" />
     </java>
   </target>
