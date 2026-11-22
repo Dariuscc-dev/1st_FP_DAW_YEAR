@@ -257,6 +257,10 @@ hr {
   margin: 2rem 0;
 }
 
+/* ==========================================================================
+   My OWN Custom Classes for Emphasis and Supplementary Info
+   ========================================================================== */
+
 .important {
   font-weight: 600;
   color: var(--accent-terracotta);
@@ -276,4 +280,33 @@ hr {
 .important .very_important {
   font-weight: 1200;
   color: var(--accent-terracotta-hover);
+}
+
+a:hover {
+  color: var(--accent-terracotta-hover);
+  text-decoration: underline;
+}
+
+input:focus {
+  border-color: blue;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  color:#C26344
+}
+
+button:active {
+  background-color: var(--accent-terracotta-hover);
+  color: #FFFFFF;
+  border-color: var(--accent-terracotta-hover);
+}
+
+li:first-child {
+  margin-top: 0.5rem;
+}
+
+li:last-child {
+  margin-bottom: 0.5rem;
+}
+
+p:not(.important):not(.very_important) {
+  color: var(--text-secondary);
 }
